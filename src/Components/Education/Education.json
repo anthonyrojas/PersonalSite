@@ -1,0 +1,14 @@
+{
+  "education":[
+    {
+      "logo": "Assets/csulb.png",
+      "location": "California State University Long Beach",
+      "city": "Long Beach",
+      "state": "CA",
+      "startDate": "August 2013",
+      "endDate": "May 2018",
+      "major": "Computer Science",
+      "degree": "Bachelor of Science"
+    }
+  ]
+}

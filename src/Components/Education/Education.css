@@ -1,0 +1,7 @@
+.education{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #8DD88F;
+}
