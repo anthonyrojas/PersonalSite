@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -20,6 +22,94 @@
 
 .App-intro {
   font-size: large;
+  height: 100vh;
+}
+.App p{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+}
+.icon-img{
+  max-height: 250px;
+}
+.circle{
+  border-radius: 50%;
+  box-shadow: 1px 3px 15px black;
+}
+.overlay-blue{
+  height: inherit;
+  width: 100%;
+  background: rgba(0, 128, 255, 0.35);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.fadeInLeft{
+  position: relative;
+  animation: fadeInLeft 2.5s;
+}
+.fadeInRight{
+  position: relative;
+  animation: fadeInRight 2.5s;
+}
+.bounceUp{
+  position: relative;
+  animation: bounceUp 1.5s infinite;
+}
+.fadeInDown{
+  position: relative;
+  overflow-y: hidden;
+  animation: fadeInDown 3s;
+}
+
+@keyframes fadeInLeft{
+  from{
+    left: -300px;
+    opacity: 0;
+  }
+  to{
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight{
+  from{
+    right: -300px;
+    opacity: 0;
+  }
+  to{
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes bounceUp{
+  0%{
+    transform: translateY(-100px) scaleY(1);
+  }
+  30%{
+    transform: translateY(0) scaleY(1);
+  }
+  50%{
+    transform: translateY(10px) scaleY(0.5);
+  }
+  70%{
+    transform: translateY(0) scaleY(1);
+  }
+  100%{
+    transform: translateY(-100px) scaleY(1);
+  }
+}
+@keyframes fadeInDown{
+  from{
+    bottom: 800px;
+    opacity: 0;
+  }
+  to{
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes App-logo-spin {

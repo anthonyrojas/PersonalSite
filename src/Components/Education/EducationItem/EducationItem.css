@@ -1,0 +1,21 @@
+.education-item{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.education-item-logo{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.education-item-info{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.education-item-info p{
+  margin: 3px;
+}

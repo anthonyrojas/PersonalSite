@@ -1,7 +1,17 @@
 .education{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   background-color: #8DD88F;
+  padding: 2em 1em;
+}
+.education-header{
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.education-header img{
+  margin: 0;
+  padding: 0;
 }

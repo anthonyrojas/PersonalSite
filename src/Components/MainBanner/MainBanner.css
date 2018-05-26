@@ -1,0 +1,30 @@
+.main-banner{
+  background-image: url('Assets/code-background.jpg');
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.main-banner-content{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: white;
+}
+.main-banner-title{
+  font-size: 8em;
+  margin: 0;
+  padding: 0;
+  font-family: 'Maven Pro', sans-serif;
+}
+.main-banner-caption{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
