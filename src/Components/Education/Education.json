@@ -8,7 +8,49 @@
       "startDate": "August 2013",
       "endDate": "May 2018",
       "major": "Computer Science",
-      "degree": "Bachelor of Science"
+      "degree": "Bachelor of Science",
+      "courses": [
+        {
+          "num": "CECS 323",
+          "name": "Database Fundamentals"
+        },
+        {
+          "num": "CECS 326",
+          "name": "Operating Systems"
+        },
+        {
+          "num": "CECS 327",
+          "name": "Introduction to Networks and Distributed Computing"
+        },
+        {
+          "num": "CECS 328",
+          "name": "Data Structures and Algorithms"
+        },
+        {
+          "num": "CECS 343",
+          "name": "Introduction to Software Engineering"
+        },
+        {
+          "num": "CECS 424",
+          "name": "Organization of Programming Languages"
+        },
+        {
+          "num": "CECS 470",
+          "name": "Web Programming and Web Accessibility"
+        },
+        {
+          "num": "CECS 475",
+          "name": "Software Development with Frameworks"
+        },
+        {
+          "num": "CECS 478",
+          "name": "Introduction to Computer Security"
+        },
+        {
+          "num": "CECS 493 A and B",
+          "name": "Database Web Application Project 1 and 2"
+        }
+      ]
     }
   ]
 }

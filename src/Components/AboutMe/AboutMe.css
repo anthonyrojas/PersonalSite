@@ -1,0 +1,37 @@
+.about-me{
+  background-color: #E3ECF0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 2em 0;
+}
+
+.about-me-profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 20%;
+}
+.about-me-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+.about-me-description *{
+  text-align: left;
+  padding: 0 1.5em;
+}
+.about-me-description p{
+  font-size: 1.5em;
+}
+.about-me-profile-img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}

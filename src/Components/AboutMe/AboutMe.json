@@ -1,0 +1,11 @@
+{
+  "title": "About Me",
+  "description": [
+    {
+      "content": "I am a recent graduate from California State University Long Beach with a Bachelors of Science degree in Computer Science. During my time there I grew to have a liking for web programming and technologies. I particularly enjoy programming in JavaScript for its flexibility, development speed, and snappy performance, but am well-versed in other programming languages as well."
+    },
+    {
+      "content": "During my time as a student and in my spare time, I like researching and building projects. My primary focus is building REST API's, designing databases, and deploying these servers to a cloud hosting service like AWS (provided that I have sufficient resources). I then spend time researching the best practices for securing these API's to the best of my abilities and providing authentication schemes. My capabilities also extend to building client applications to consume and leverage API's I build, or those built by other organizations and individuals. These client applications are usually web applications, but, thanks to React Native, they may be mobile applications as well. However, separating the client and server this way is not for everyone, so I am also capable of building web applications with full-stack frameworks and technologies; for example, ASP.NET MVC. I am always open to collaborating with developers and designers on a project, so feel free to contact me. 😁"
+    }
+  ]
+}

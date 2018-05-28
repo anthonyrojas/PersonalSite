@@ -13,21 +13,6 @@ class Education extends Component{
       educationItemInfoClass: ['education-item-info']
     }
   }
-  addEducationAnimations(e){
-    const educationHeaderImg = this.state.educationHeaderImgClass;
-    educationHeaderImg.push('bounceUp');
-    this.setState({
-      educationHeaderImgClass: educationHeaderImg
-    });
-  }
-  removeEducationAnimations(e){
-    const educationHeaderImg = this.state.educationHeaderImgClass;
-    const i = educationHeaderImg.indexOf('bounceUp');
-    educationHeaderImg.splice(i);
-    this.setState({
-      educationHeaderImgClass: educationHeaderImg
-    });
-  }
   toggleEducationAnimations(e){
     const educationHeaderImg = this.state.educationHeaderImgClass;
     if(educationHeaderImg.includes('bounceUp')){
@@ -43,8 +28,8 @@ class Education extends Component{
     const educations = EducationData.education;
     return(
       <Waypoint
-        onEnter={this.addEducationAnimations.bind(this)}
-        onLeave={this.removeEducationAnimations.bind(this)}
+        onEnter={this.toggleEducationAnimations.bind(this)}
+        onLeave={this.toggleEducationAnimations.bind(this)}
       >
         <div className="education" ref={this.educationRef} >
           <div className="education-header">
