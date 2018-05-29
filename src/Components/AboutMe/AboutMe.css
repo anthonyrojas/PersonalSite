@@ -8,7 +8,16 @@
   width: 100vw;
   padding: 2em 0;
 }
-
+.about-me-header{
+  font-size: 2.5em;
+  font-family: 'Maven Pro', sans-serif;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 .about-me-profile{
   display: flex;
   flex-direction: column;

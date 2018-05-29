@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './MainBanner.css';
 const mainBanner = () =>(
   <div className="main-banner">

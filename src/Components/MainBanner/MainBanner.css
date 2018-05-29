@@ -1,5 +1,5 @@
 .main-banner{
-  background-image: url('Assets/code-background.jpg');
+  background-image: url('Assets/code-background.png');
   display: flex;
   flex-flow: row wrap;
   height: 100vh;

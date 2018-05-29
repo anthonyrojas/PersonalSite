@@ -14,4 +14,38 @@
 .education-header img{
   margin: 0;
   padding: 0;
+  max-width: 220px;
+  max-height: 220px;
+  height: auto;
+  width: auto;
+}
+.courses-button-row{
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+  width: 100%;
+}
+.courses-btn{
+  background-color: #049BFF;
+  border-radius: 0.5em;
+  outline: 0;
+  border: 0;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 1.1em;
+  box-shadow: 0 0 5px 1px #565656;
+}
+.courses-btn:hover{
+  background-color: #17A3FF;
+}
+.courses-btn:active{
+  background-color: #9ED9FF;
+  color: #0C0C0C;
+}
+.courses-section{
+  flex-direction: column;
+  width: 100%;
 }
