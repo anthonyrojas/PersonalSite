@@ -4,7 +4,6 @@ import EducationData from './Education.json';
 import './Education.css';
 import EducationItem from './EducationItem/EducationItem';
 import Courses from './Courses/Courses';
-import gradcap from './Assets/gradcap.png';
 import Aux from '../../HOC/AuxHOC';
 class Education extends Component{
   constructor(props){
@@ -13,6 +12,7 @@ class Education extends Component{
       educationHeaderImgClass: ['icon-img'],
       educationItemLogoClass: ['icon-img', 'circle', 'education-item-logo'],
       educationItemInfoClass: ['education-item-info'],
+      courseClassList: ['courses-section'],
       showCourses: false,
       coursesDisplay: 'none',
       courseButtonText: 'Show Courses'
@@ -33,17 +33,21 @@ class Education extends Component{
     const showCoursesVal = this.state.showCourses;
     let coursesDisplayVal = this.state.coursesDisplay;
     let coursesBtnTextVal = this.state.courseButtonText;
+    let courseClassListVal = [];
     if(showCoursesVal){
       coursesDisplayVal = 'none';
       coursesBtnTextVal = 'Show Courses';
+      courseClassListVal = ['courses-section', 'fadeOutUpZoom'];
     }else{
       coursesDisplayVal='flex';
       coursesBtnTextVal='Hide Courses';
+      courseClassListVal = ['courses-section', 'fadeInDownZoom']
     }
     this.setState({
       showCourses: !showCoursesVal,
       coursesDisplay: coursesDisplayVal,
-      courseButtonText: coursesBtnTextVal
+      courseButtonText: coursesBtnTextVal,
+      courseClassList: courseClassListVal
     });
   }
   render(){
@@ -55,6 +59,7 @@ class Education extends Component{
       >
         <div className="education" ref={this.educationRef} >
           <div className="education-header">
+            <div className="education-header-title">Education</div>
             <img src={require('./Assets/gradcap.png')} className={this.state.educationHeaderImgClass.join(' ')} alt="graduation cap"/>
           </div>
           {educations.map(eduItem =>(
@@ -72,7 +77,7 @@ class Education extends Component{
               <div className="courses-button-row">
                 <button className="courses-btn" onClick={this.toggleCourses.bind(this)}>{this.state.courseButtonText}</button>
               </div>
-              <div className="courses-section" style={{display: `${this.state.coursesDisplay}`}}>
+              <div key={'coursesTransition'+eduItem.location} className={this.state.courseClassList.join(' ')} style={{display: `${this.state.coursesDisplay}`}}>
                 <Courses courses={eduItem.courses}/>
               </div>
             </Aux>

@@ -66,6 +66,18 @@
   position: relative;
   animation: zoomInDelay 3s;
 }
+.zoomIn{
+  position: relative;
+  animation: zoomInDelay 1.5s;
+}
+.fadeInDownZoom{
+  position: relative;
+  animation: fadeInDownZoom 1.5s;
+}
+.fadeOutUpZoom{
+  position: relative;
+  animation: fadeOutUpZoom 1.5s;
+}
 @keyframes fadeInLeft{
   from{
     left: -300px;
@@ -128,7 +140,28 @@
     transform: scaleY(1);
   }
 }
-
+@keyframes fadeInDownZoom {
+  0%{
+    opacity: 0;
+    transform: perspective(300px) translate3d(0, -300px, -200px) scaleY(0.2);
+  }
+  100%{
+    opacity: 0.9;
+    transform: perspective(300px) translate3d(0, 0, 25px) scaleY(0.9);
+  }
+}
+@keyframes fadeOutUpZoom{
+  0%{
+    opacity: 0.9;
+    transform: perspective(300px) translate3d(0, 0, 25px) scaleY(0.9);
+    display: flex;
+  }
+  100%{
+    opacity: 0;
+    transform: perspective(300px) translate3d(0, -300px, -200px) scaleY(0.2);
+    display: flex;
+  }
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

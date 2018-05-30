@@ -5,7 +5,7 @@ const mainBanner = () =>(
   <div className="overlay-blue fadeInDown">
     <div className="main-banner-content">
       <h1 className="main-banner-title">Anthony Rojas</h1>
-      <p className="main-banner-caption">JavaScript programmer, fullstack and backend developer, cat lover.</p>
+      <p className="main-banner-caption">JavaScript programmer, fullstack and backend developer, cat person.</p>
     </div>
   </div>
   </div>

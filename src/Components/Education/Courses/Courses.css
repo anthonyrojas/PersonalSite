@@ -2,15 +2,5 @@
   list-style-type: none;
 }
 .courses-list-item{
-  animation: animateCourseItem 1.5s;
-}
-@keyframes animateCourseItem{
-  from{
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  to{
-    transform: translateY(0);
-    opacity: 1;
-  }
+  padding: 0.5em 0;
 }

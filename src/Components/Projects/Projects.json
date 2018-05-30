@@ -1,22 +1,52 @@
 {
   "projects":[
     {
-      "title": "Car Wash App"
+      "title": "Car Wash App",
+      "image": "carwash-app.png",
+      "status": "development",
+      "description": "Application for car washes."
     },
     {
-      "title": "Secure Chat App"
+      "title": "Secure Chat App",
+      "image": "secure-chat-app.png",
+      "status": "development",
+      "description": "An end-to-end encrypted chat application."
     },
     {
-      "title": "Clash Royale Site (for my clan)"
+      "title": "Clash Royale Site (Clan)",
+      "image":"normies-cr.png",
+      "status": "completed",
+      "description": "Website built for displaying information about my clan on Clash Royale."
     },
     {
-      "title": "Media Manager"
+      "title": "Dave's Media Manager",
+      "image": "media-manager.png",
+      "status": "completed",
+      "description": "Library website built that provides CRUD operations for the client's personal collection of media such as books, movies, and CD's."
     },
     {
-      "title": "Pride All-Stars"
+      "title": "Pride All-Stars",
+      "image": "pride-all-stars.png",
+      "status": "completed",
+      "description": "Website built for displaying the different services available for a client's dance studio."
     },
     {
-      "title": "Version Control System"
+      "title": "Music Store",
+      "image": "music-store.png",
+      "status": "completed",
+      "description": "Music Store website built using ASP.NET MVC 5."
+    },
+    {
+      "title": "Distributed File System",
+      "image": "DFS.png",
+      "status": "completed",
+      "description": "Distributed file system based on Chord that utilizes Java's RMI library and functions."
+    },
+    {
+      "title": "Version Control System",
+      "image": "temp.jpg",
+      "status": "completed",
+      "description": "Simple version control system built using Java."
     }
   ]
 }

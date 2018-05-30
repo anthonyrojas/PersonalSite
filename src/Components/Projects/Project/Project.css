@@ -1,0 +1,36 @@
+.project-col{
+  display: flex;
+  flex-flow: column wrap;
+  width: 45%;
+  margin: 2em 0.5em;
+}
+.project-item{
+  background-color: #FFF;
+  box-shadow: 0 0 6px 3px #696969;
+}
+.project-header{
+  background-color: #FFE503;
+  padding: 1.5em 0;
+}
+.project-title{
+  font-size: 1.7em;
+  font-weight: bold;
+}
+.project-image-section{
+  height: 300px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+.project-description{
+  background-color: #FFF;
+  text-align: left;
+  padding: 0.5em 0.5em;
+}
+@media screen and (max-width: 976px){
+  .project-col{
+    width: 100%;
+    padding: 0 1em;
+  }
+}
