@@ -5,11 +5,12 @@ import './Education.css';
 import EducationItem from './EducationItem/EducationItem';
 import Courses from './Courses/Courses';
 import Aux from '../../HOC/AuxHOC';
+import Reveal from 'react-reveal/Reveal';
 class Education extends Component{
   constructor(props){
     super(props);
     this.state = {
-      educationHeaderImgClass: ['icon-img'],
+      educationHeaderImgClass: ['icon-img', 'bounceUp'],
       educationItemLogoClass: ['icon-img', 'circle', 'education-item-logo'],
       educationItemInfoClass: ['education-item-info'],
       courseClassList: ['courses-section'],
@@ -17,17 +18,6 @@ class Education extends Component{
       coursesDisplay: 'none',
       courseButtonText: 'Show Courses'
     }
-  }
-  toggleEducationAnimations(e){
-    const educationHeaderImg = this.state.educationHeaderImgClass;
-    if(educationHeaderImg.includes('bounceUp')){
-      educationHeaderImg.splice(educationHeaderImg.indexOf('bounceUp'));
-    }else{
-      educationHeaderImg.push('bounceUp');
-    }
-    this.setState({
-      educationHeaderImgClass: educationHeaderImg
-    });
   }
   toggleCourses(){
     const showCoursesVal = this.state.showCourses;
@@ -53,10 +43,6 @@ class Education extends Component{
   render(){
     const educations = EducationData.education;
     return(
-      <Waypoint
-        onEnter={this.toggleEducationAnimations.bind(this)}
-        onLeave={this.toggleEducationAnimations.bind(this)}
-      >
         <div className="education" ref={this.educationRef} >
           <div className="education-header">
             <div className="education-header-title">Education</div>
@@ -74,16 +60,17 @@ class Education extends Component{
                 major={eduItem.major}
                 degree={eduItem.degree}
               />
-              <div className="courses-button-row">
-                <button className="courses-btn" onClick={this.toggleCourses.bind(this)}>{this.state.courseButtonText}</button>
-              </div>
+              <Reveal effect="fadeInDownZoom">
+                <div className="courses-button-row">
+                  <button className="courses-btn" onClick={this.toggleCourses.bind(this)}>{this.state.courseButtonText}</button>
+                </div>
+              </Reveal>
               <div key={'coursesTransition'+eduItem.location} className={this.state.courseClassList.join(' ')} style={{display: `${this.state.coursesDisplay}`}}>
                 <Courses courses={eduItem.courses}/>
               </div>
             </Aux>
           ))}
         </div>
-      </Waypoint>
     );
   }
 }

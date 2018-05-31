@@ -66,6 +66,10 @@
   overflow-y: hidden;
   animation: fadeInDown 3s;
 }
+.fadeInUpZoom{
+  position: relative;
+  animation: fadeInUpZoom 2.5s;
+}
 .zoomInDelay{
   position: relative;
   animation: zoomInDelay 3s;
@@ -73,6 +77,10 @@
 .zoomIn{
   position: relative;
   animation: zoomInDelay 1.5s;
+}
+.zoomOut{
+  position: relative;
+  animation: zoomInDelay 1.5s reverse;
 }
 .fadeInDownZoom{
   position: relative;
@@ -127,6 +135,16 @@
   to{
     bottom: 0;
     opacity: 1;
+  }
+}
+@keyframes fadeInUpZoom{
+  from{
+    transform: perspective(300px) translate3d(0, 0, 25px) scaleY(0.9);
+    opacity: 0;
+  }
+  to{
+    transform: perspective(300px) translate3d(0, 0, 25px) scaleY(0.9);
+    opacity: 0.9;
   }
 }
 @keyframes zoomInDelay{

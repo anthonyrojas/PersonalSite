@@ -53,7 +53,7 @@
 }
 .contact-header-title{
   font-family: 'Maven Pro', sans-serif;
-  font-size: 2em;
+  font-size: 2em !important;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
