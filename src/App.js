@@ -4,6 +4,7 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import './App.css';
 import MainBanner from './Components/MainBanner/MainBanner';
 import Projects from './Components/Projects/Projects';
+import Contact from './Components/Contact/Contact';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <AboutMe />
         <Education />
         <Projects />
+        <Contact />
       </div>
     );
   }

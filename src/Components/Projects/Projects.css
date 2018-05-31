@@ -1,10 +1,10 @@
 .projects-row{
   display: flex;
   flex-flow: row wrap;
-  background-color: #C2DAEC;
+  background-color: #E3ECF0;
   justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 .projects-row-header{
   font-family: 'Maven Pro',sans-serif;
@@ -14,4 +14,8 @@
   flex-flow: column wrap;
   width: 100%;
   padding: 0.5em 0;
+}
+.projects-about{
+  text-align: left;
+  padding: 0 1em;
 }

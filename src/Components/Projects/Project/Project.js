@@ -8,8 +8,14 @@ const Project = (props)=>(
       </div>
       <div className="project-image-section" style={{backgroundImage:`url(${require('../Assets/' + props.image)})`}}>
       </div>
-      <div className="project-description" style={{borderBottom:props.projectStatus==='completed' ? '8px solid #01FF01' : '8px solid #FF9A03'}}>
-        <p>{props.description}</p>
+      <div className="project-description">
+        <p>{props.description} {props.link ? <a href={props.link} target="_blank" className="project-link">Live Site</a> : null}</p>
+      </div>
+      <hr/>
+      <div className="project-technologies" style={{borderBottom:props.projectStatus==='completed' ? '8px solid #01FF01' : '8px solid #FF9A03'}}>
+        {props.technologies.map(tech=>(
+          <span className="project-tech-item">{tech} </span>
+        ))}
       </div>
     </div>
   </div>

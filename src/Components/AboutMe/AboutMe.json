@@ -3,7 +3,7 @@
   "description": [
     {
       "num": 1,
-      "content": "I am a recent graduate from California State University Long Beach with a Bachelors of Science degree in Computer Science. During my time there I grew to have a liking for web programming and technologies. I particularly enjoy programming in JavaScript for its flexibility, development speed, and snappy performance, but am well-versed in other programming languages as well."
+      "content": "I am a recent graduate from California State University Long Beach with a Bachelors of Science degree in Computer Science. During my time there I grew to have a liking for web programming and technologies. I particularly enjoy programming in JavaScript for its flexibility, development speed, and snappy performance, but am well-versed in other programming languages as well. Being that I am a recent graduate, I am currently seeking employment in a job in the computer science industry, preferably as a backend engineer, fullstack developer, or software engineer/developer in any of the languages I have listed below."
     },
     {
       "num": 2,
@@ -64,6 +64,14 @@
       "category": "Dev Ops",
       "names": [
         "Familiar deploying to AWS EC2 utilizing Nginx and Apache servers along with setting up FTP servers"
+      ]
+    },
+    {
+      "category": "Version Control",
+      "names": [
+        "Git",
+        "GitHub",
+        "Bitbucket"
       ]
     }
   ]

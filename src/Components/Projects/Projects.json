@@ -4,49 +4,128 @@
       "title": "Car Wash App",
       "image": "carwash-app.png",
       "status": "development",
-      "description": "Application for car washes."
+      "description": "Application designed to help with the intention of assisting a car wash with its sales operations. The server would store information on services available for a location with the price. Customers would be able to pay through the app or view information on the website. Owners would be provided CRUD operations for their location's menu and information through both the website and app.",
+      "technologies":[
+        "Javascript",
+        "ReactJS",
+        "NodeJS",
+        "ExpressJS",
+        "React Native",
+        "CSS",
+        "HTML",
+        "REST API",
+        "MongoDB"
+      ]
     },
     {
       "title": "Secure Chat App",
       "image": "secure-chat-app.png",
       "status": "development",
-      "description": "An end-to-end encrypted chat application."
+      "description": "Second iteration of an end-to-end encrypted chat application. The server provides a REST API with JWT authentication for storing user information, routing and storing messages, and generating keys. The client application encrypts each message with RSA encryption and generates HMAC tags for the receiver of the message to validate that the encrypted data has not been tampered with. Deployed to Nginx on AWS.",
+      "technologies": [
+        "Javascript",
+        "NodeJS",
+        "ExpressJS",
+        "AWS",
+        "Nginx",
+        "React Native",
+        "REST API",
+        "MongoDB"
+      ]
     },
     {
       "title": "Clash Royale Site (Clan)",
       "image":"normies-cr.png",
       "status": "completed",
-      "description": "Website built for displaying information about my clan on Clash Royale."
+      "description": "Website built for displaying information about my clan on Clash Royale. The server pulls data from RoyaleAPI and injects it into EJS templates that are rendered as HTML. The site uses Twitter Bootstrap with some custom styling. The server also provides account registration and management to enable users to utilize a real-time messaging service using Socket.IO. Deployed to Nginx server on AWS.",
+      "link": "https://normiesclashroyale.me",
+      "technologies":[
+        "Javascript",
+        "HTML",
+        "CSS",
+        "NodeJS",
+        "ExpressJS",
+        "EJS",
+        "jQuery",
+        "AWS",
+        "Nginx",
+        "REST API",
+        "Bootstrap",
+        "MongoDB"
+      ]
     },
     {
       "title": "Dave's Media Manager",
       "image": "media-manager.png",
       "status": "completed",
-      "description": "Library website built that provides CRUD operations for the client's personal collection of media such as books, movies, and CD's."
+      "description": "Library website built that provides CRUD operations for the client's personal collection of media such as books, movies, and CD's. The backend is powered by JavaEE with JPA for data modeling. Uses MVC architecture, providing real-time updates to the client when data is changed. Deployed to AWS EC2 instance using the Apache Tomcat server.",
+      "technologies":[
+        "JavaEE",
+        "SQL",
+        "MySQL",
+        "JPA",
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Apache Tomcat",
+        "AWS",
+        "Bootstrap"
+      ]
     },
     {
       "title": "Pride All-Stars",
       "image": "pride-all-stars.png",
       "status": "completed",
-      "description": "Website built for displaying the different services available for a client's dance studio."
+      "description": "Website built for a client's dance studio. The website provides information about different services and classes offered by the dance studio as well as the ability to sign up for classes. The classes are displayed by recursively pulling data from a MySQL database. Sign-ups are also stored in the database. Completely custom CSS is used. Deployed over FTP to school server.",
+      "technologies": [
+        "PHP5",
+        "Javascript",
+        "jQuery",
+        "HTML",
+        "CSS",
+        "SQL",
+        "MySQL",
+        "Apache"
+      ]
     },
     {
       "title": "Music Store",
       "image": "music-store.png",
       "status": "completed",
-      "description": "Music Store website built using ASP.NET MVC 5."
+      "description": "Music Store website built using ASP.NET MVC 5. Follows MVC architecture and an admin panel that provides CRUD operations on the MSSQL database. Database models use Entity Framework. Clients can create accounts, search CD's, add to a cart, and purchase the items in their cart. Uses sessions for authentication. Twitter Bootstrap with some custom styling is used for the frontend.",
+      "technologies":[
+        "ASP.NET",
+        "MVC 5",
+        "C#",
+        "MSSQL",
+        "Linq",
+        "Entity Framework",
+        "HTML",
+        "CSS",
+        "Javascript",
+        "jQuery",
+        "Bootstrap"
+      ]
     },
     {
       "title": "Distributed File System",
       "image": "DFS.png",
       "status": "completed",
-      "description": "Distributed file system based on Chord that utilizes Java's RMI library and functions."
+      "description": "Distributed file system based on Chord that utilizes Java's RMI library to connect peers to a registry. Provides an interface with GET, PUT, POST, and DELETE methods for the files. This system also provides a simple Map Reduce implementation for word count of the distributed files.",
+      "technologies":[
+        "Java",
+        "Java RMI",
+        "Map Reduce"
+      ]
     },
     {
       "title": "Version Control System",
       "image": "temp.jpg",
       "status": "completed",
-      "description": "Simple version control system built using Java."
+      "description": "Simple version control system built using Java. The program provides and updates a manifest every time files are changed for version control functionality. Timestamps are written into the manifest file.",
+      "technologies":[
+        "Java"
+      ]
     }
   ]
 }
