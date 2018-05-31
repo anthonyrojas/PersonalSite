@@ -2,7 +2,6 @@
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anthonyrojas.github.io/personal-website",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
