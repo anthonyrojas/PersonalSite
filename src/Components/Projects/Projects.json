@@ -20,7 +20,7 @@
     {
       "title": "Secure Chat App",
       "image": "secure-chat-app.png",
-      "status": "development",
+      "status": "completed",
       "description": "Second iteration of an end-to-end encrypted chat application. The server provides a REST API with JWT authentication for storing user information, routing and storing messages, and generating keys. The client application encrypts each message with RSA encryption and generates HMAC tags for the receiver of the message to validate that the encrypted data has not been tampered with. Deployed to Nginx on AWS.",
       "technologies": [
         "Javascript",
