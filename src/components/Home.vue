@@ -1,25 +1,30 @@
 <template>
   <div class="home">
-    <div class="section-header">
-      <span class="section-header-text">About Me</span>
+    <div v-if="isLoading === true" class="page-loading">
+      <div class="loader"></div>
     </div>
-    <div class="about-me-item" v-for="aboutMeItem in aboutData" v-bind:key="aboutMeItem.id">
-      <div class="about-me-img">
-        <img class="circle-img logo-img profile-img" :src="aboutMeItem.profile" alt="profile picture"/>
+    <div v-else>
+      <div class="section-header">
+        <span class="section-header-text">About Me</span>
       </div>
-      <div class="about-me-description">
-        <p v-for="description in aboutMeItem.description" v-bind:key="aboutMeItem.description.key">{{description.info}}</p>
+      <div class="about-me-item" v-for="aboutMeItem in aboutData" v-bind:key="aboutMeItem.id">
+        <div class="about-me-img">
+          <img class="circle-img logo-img profile-img" :src="aboutMeItem.profile" alt="profile picture"/>
+        </div>
+        <div class="about-me-description">
+          <p v-for="description in aboutMeItem.description" v-bind:key="aboutMeItem.description.key">{{description.info}}</p>
+        </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="skills">
-        <div class="skill-item-container" v-for="skillItem in skills" v-bind:key="skillItem.category">
-          <h4>{{skillItem.category}}</h4>
-          <ul>
-            <li v-for="skillName in skillItem.names">
-              {{skillName}}
-            </li>
-          </ul>
+      <div class="container">
+        <div class="skills">
+          <div class="skill-item-container" v-for="skillItem in skills" v-bind:key="skillItem.category">
+            <h4>{{skillItem.category}}</h4>
+            <ul>
+              <li v-for="skillName in skillItem.names">
+                {{skillName}}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -152,8 +157,14 @@ export default{
       snapshot.forEach(skillItem=>{
         this.skills.push(skillItem.data())
       })
+    }).then(done =>{
+      setTimeout(()=>{
+        this.isLoading = false
+      }, 500)
     })
-    this.isLoading = false
+  },
+  mounted(){
+    window.scrollTo(0,0)
   }
 }
 </script>

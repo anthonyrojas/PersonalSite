@@ -59,7 +59,7 @@ export default {
   },
   mounted(){
     if(window.scrollY <= 20){
-      scrolledToTop: true
+      this.scrolledToTop = true
     }
     window.addEventListener('scroll', this.handleNavScroll)
   },
@@ -257,6 +257,24 @@ footer{
   text-align: center;
   box-shadow: 0 0 10px 1px #222;
 }
+.text-center{
+  text-align: center;
+}
+.page-loading{
+  background-color: black;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  flex-flow: row wrap;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 999;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 796px){
   #main-banner-title{
     font-size: 7em;
@@ -303,5 +321,22 @@ footer{
   100% {
     box-shadow: 0 0 0 0 rgba(255,255,255, 0);
   }
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 15em;
+    height: 15em;
+    animation: spin 1s linear infinite;
+    background-color: rgba(0,0,0,0);
+    background-image: url('https://previews.123rf.com/images/alhovik/alhovik1504/alhovik150400037/40367818-schwarz-wei%C3%9F-hypnose-spirale.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 </style>

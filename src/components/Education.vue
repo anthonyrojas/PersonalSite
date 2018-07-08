@@ -1,35 +1,40 @@
 <template>
 	<div class="education">
-		<div class="section-header">
-			<span class="section-header-text">Education</span>
+		<div v-if="isLoading === true" class="page-loading">
+			<div class="loader"></div>
 		</div>
-		<div v-for="educationItem in educations" v-bind:key="educationItem.id" class="education-item">
-			<div class="education-logo">
-				<img class="circle-img logo-img" :src="educationItem.logo" />
+		<div v-else>
+			<div class="section-header">
+				<span class="section-header-text">Education</span>
 			</div>
-			<div class="education-data">
-				<div class="education-data-title">
-					{{educationItem.name}}
+			<div v-for="educationItem in educations" v-bind:key="educationItem.id" class="education-item">
+				<div class="education-logo">
+					<img class="circle-img logo-img" :src="educationItem.logo" />
 				</div>
-				<div class="education-degree">
-					{{educationItem.Degree.degreeType}} in {{educationItem.Degree.major}}
-				</div>
-				<div class="education-dates">
-					Attended: {{educationItem.datesAttended.started}} to {{educationItem.datesAttended.ended}}
-				</div>
-				<div class="education-location">
-					{{educationItem.city}}, {{educationItem.state}}
-				</div>
-				<button v-if="!educationItem.showCourses" v-on:click="toggleCourses(educationItem)" class="btn btn-primary course-btn">Show Courses</button>
-				<button v-else v-on:click="toggleCourses(educationItem)" class="btn btn-primary course-btn">Hide Courses</button>
-				<div class="education-courses">
-					<transition name="zoomInFade">
-						<ul class="education-courses-list" v-show="educationItem.showCourses">
-							<li v-for="course in educationItem.classes" v-bind:key="course.number" class="education-course">
-								{{course.number}} - {{course.title}}
-							</li>
-						</ul>
-					</transition>
+				<div class="education-data">
+					<div class="education-data-title">
+						{{educationItem.name}}
+					</div>
+					<div class="education-degree">
+						{{educationItem.Degree.degreeType}} in {{educationItem.Degree.major}}
+					</div>
+					<div class="education-dates">
+						Attended: {{educationItem.datesAttended.started}} to {{educationItem.datesAttended.ended}}
+					</div>
+					<div class="education-location">
+						{{educationItem.city}}, {{educationItem.state}}
+					</div>
+					<button v-if="!educationItem.showCourses" v-on:click="toggleCourses(educationItem)" class="btn btn-primary course-btn">Show Courses</button>
+					<button v-else v-on:click="toggleCourses(educationItem)" class="btn btn-primary course-btn">Hide Courses</button>
+					<div class="education-courses">
+						<transition name="zoomInFade">
+							<ul class="education-courses-list" v-show="educationItem.showCourses">
+								<li v-for="course in educationItem.classes" v-bind:key="course.number" class="education-course">
+									{{course.number}} - {{course.title}}
+								</li>
+							</ul>
+						</transition>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -43,7 +48,7 @@ export default{
 	data(){
 		return{
 			educations: [],
-			loading: true,
+			isLoading: true,
 			showCourses: false
 		}
 	},
@@ -57,7 +62,14 @@ export default{
 				educationItemData.showCourses = false
 				this.educations.push(educationItemData)
 			})
+		}).then(done =>{
+			setTimeout(()=>{
+				this.isLoading = false
+			}, 500)
 		})
+	},
+	mounted(){
+		window.scrollTo(0,0)
 	},
 	methods: {
 		toggleCourses(educationItem){
@@ -73,7 +85,7 @@ export default{
 }
 .education-item{
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	width: 100%;
 	justify-content: center;
 	align-items: center;
@@ -82,7 +94,7 @@ export default{
 .education-logo{
 	display: flex;
 	flex-flow: column wrap;
-	width: 30%;
+	width: 26%;
 	padding: 0.5em;
 	justify-content: center;
 	align-content: center;
@@ -96,6 +108,7 @@ export default{
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+	text-align: center;
 }
 .education-data-title{
 	font-size: 3em;
@@ -150,6 +163,16 @@ export default{
 	}
 	to{
 		transform: scaleY(1.1);
+	}
+}
+@media screen and (max-width: 976px){
+	.education-logo{
+		width: 100%;
+	}
+	.education-data{
+		width: 100%;
+		padding: 0 1em;
+		text-align: center;
 	}
 }
 </style>
