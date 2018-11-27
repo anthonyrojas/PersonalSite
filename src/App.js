@@ -1,28 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import Header from './Components/Header/Header';
+import About from './Components/About/About';
+import Education from './Components/Education/Education';
+import Work from './Components/Work/Work';
+import Projects from './Components/Projects/Projects';
+import Navbar from './Components/Navbar/Navbar';
+import {AboutProvider} from './Components/About/AboutContext';
+import firebaseConn from './firebaseInit';
+import Aux from './HOC/AuxHOC';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      navVisibility: false
+    }
+  }
+  toggleNav(e){
+    this.setState({
+      ...this.state,
+      navVisibility: !this.state.navVisibility
+    });
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <Router>
+        <Aux>
+          <Navbar visible={this.state.navVisibility} />
+          <main>
+            <Switch>
+              <AboutProvider>
+                <Route exact path='/' component={About}/>
+              </AboutProvider>
+              <Route path='/work' component={Work}/>
+              <Route path='/education' component={Education}/>
+              <Route path='/projects' component={Projects}/>
+            </Switch>
+            <button className='nav-btn ripple' onClick={this.toggleNav.bind(this)}><i className='material-icons'>menu</i></button>
+          </main>
+        </Aux>
+        </Router>
       </div>
     );
   }
 }
-
 export default App;

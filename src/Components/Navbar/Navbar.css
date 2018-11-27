@@ -1,0 +1,35 @@
+nav{
+    width: 16em;
+    background-color: #333;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    left: -20em;
+}
+ul{
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 16em;
+    margin-top: 1em;
+}
+li{
+    margin: 0.5em 0;
+    width: 100%;
+    text-align: center;
+}
+.nav-link{
+    color: #FFF;
+    text-decoration: none !important;
+    padding: 1.2em 0;
+    display: block;
+}
+.nav-link:hover{
+    text-decoration: none;
+    color: #DDD;
+    background-color: #222;
+}
+.nav-link:visited{
+    color: #FFF;
+}
