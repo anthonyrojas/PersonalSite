@@ -47,8 +47,17 @@ export class AboutProvider extends Component{
             })
         });
     }
-    componentDidMount(){
-        this.fetchAboutData();
+    async componentDidMount(){
+        try{
+            let aboutRes = await this.getAboutData();
+            aboutRes.forEach(doc => {
+                this.setState({
+                    ...state
+                })
+            });
+        }catch(e){
+
+        }
     }
     render(){
         return(
