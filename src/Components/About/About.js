@@ -9,12 +9,12 @@ class About extends Component{
         return(
             <AboutConsumer>
             {(state) =>{
-                if(state.statusCode === 0){
+                if(state.loading){
                     return(
                         <p>Loading...</p>
                     );
                 }else{
-                    console.log(state);
+                    console.log(state)
                     return(
                         <React.Fragment>
                             <div className='About'>
@@ -28,9 +28,7 @@ class About extends Component{
                                 <div className='col-lg-8 col-md-9'>
                                     <div className='paper'>
                                         <div className='section-description'>
-                                        {
-                                            state.statusCode === 200 ? <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span> : 'Nothing to show here.'
-                                        }
+                                                <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span>
                                         </div>
                                     </div>
                                 </div>

@@ -3,60 +3,77 @@ import {db} from '../../firebaseInit';
 const AboutContext = React.createContext();
 export class AboutProvider extends Component{
     state={
-        statusCode: 0,
-        aboutLoading: true,
+        err: false,
+        loading: true,
         aboutContent: '',
         skillsContent: ''
     }
     async getAboutData(){
-        return await db.collection('entries').where('title', '==', 'About').limit(1).get();
+        try{
+            let snapshot = await db.collection('entries').where('title', '==', 'About').limit(1).get();
+            if(snapshot.docs.length > 0){
+                return {err: false, data: {...snapshot.docs[0].data(), id: snapshot.docs[0].id}};
+            }
+            return {err: true, data: {}};
+        }catch(e){
+            return {err: true, data: {}};
+        }
+        // return await db.collection('entries').where('title', '==', 'About').limit(1).get();
     }
     async getSkillLists(entryID){
-        return await db.collection('list_items').where('entryID', '==', entryID).get();
+        try{
+            let snapshot = await db.collection('listItems').where('entryID', '==', db.collection('entries').doc(entryID)).get();
+            if(snapshot.docs.length > 0){
+                let docsData = [];
+                snapshot.docs.forEach(doc => {
+                    let docData = {id: doc.id, ...doc.data()};
+                    docsData.push(docData);
+                });
+                return {err: false, data: docsData};
+            }
+            return {err: true, data: []};
+        }catch(e){
+            return {err: true, data: []};
+        }
+        // return await db.collection('listItems').where('entryID', '==', entryID).get();
     }
     async getSkillsListItems(listID){
-        return
-    }
-    fetchAboutData = () =>{
-        db.collection('entries').where('title', '==', 'About').limit(1).get()
-        .then((snapshot)=>{
-            if(snapshot.docs.length >= 1){
-                snapshot.forEach((doc)=>{
-                    this.setState({
-                        ...this.state,
-                        statusCode: 200,
-                        aboutContent: doc.data(),
-                        aboutLoading: false
-                    });
+        try{
+            let snapshot = await db.collection('subListItems').where('listItemID', '==', db.collection('listItems').doc(listID)).get();
+            if(snapshot.docs.length > 0){
+                let docsData = [];
+                snapshot.docs.forEach(doc => {
+                    let docData = {id: doc.id, ...doc.data()};
+                    docsData.push(docData);
                 });
-            }else{
-                this.setState({
-                    ...this.state,
-                    statusCode: 404,
-                    aboutContent: '',
-                    aboutLoading: false
-                });
+                return {err: false, data: docsData};
             }
-        })
-        .catch(err=>{
-            this.setState({
-                ...this.state,
-                statusCode: 500,
-                aboutContent: '',
-                aboutLoading: false
-            })
-        });
+            return {err: false, data: []};
+        }catch(e){
+            return {err: true, data: []};
+        }
     }
     async componentDidMount(){
-        try{
-            let aboutRes = await this.getAboutData();
-            aboutRes.forEach(doc => {
-                this.setState({
-                    ...state
-                })
+        let aboutData = await this.getAboutData();
+        if(!aboutData.err){
+            let listsData = await this.getSkillLists(aboutData.data.id);
+            await listsData.data.forEach(async (list) => {
+               let subListData = await this.getSkillsListItems(list.id);
+               list.skills = subListData.data;
             });
-        }catch(e){
-
+            this.setState({
+                ...this.setState,
+                err: false,
+                loading: false,
+                aboutContent: aboutData.data,
+                skillsContent: listsData.data
+            });
+        }else{
+            this.setState({
+                ...this.state,
+                err: true,
+                loading: false
+            });
         }
     }
     render(){
