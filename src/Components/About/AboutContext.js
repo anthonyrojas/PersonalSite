@@ -4,7 +4,8 @@ const AboutContext = React.createContext();
 export class AboutProvider extends Component{
     state={
         err: false,
-        loading: true,
+        aboutLoading: true,
+        skillsLoading: true,
         aboutContent: '',
         skillsContent: ''
     }
@@ -12,7 +13,7 @@ export class AboutProvider extends Component{
         try{
             let snapshot = await db.collection('entries').where('title', '==', 'About').limit(1).get();
             if(snapshot.docs.length > 0){
-                return {err: false, data: {...snapshot.docs[0].data(), id: snapshot.docs[0].id}};
+                return {err: false, data: {...await snapshot.docs[0].data(), id: snapshot.docs[0].id}};
             }
             return {err: true, data: {}};
         }catch(e){
@@ -25,8 +26,8 @@ export class AboutProvider extends Component{
             let snapshot = await db.collection('listItems').where('entryID', '==', db.collection('entries').doc(entryID)).get();
             if(snapshot.docs.length > 0){
                 let docsData = [];
-                snapshot.docs.forEach(doc => {
-                    let docData = {id: doc.id, ...doc.data()};
+                await snapshot.docs.forEach(async (doc) => {
+                    let docData = {id: doc.id, ...await doc.data()};
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
@@ -42,8 +43,9 @@ export class AboutProvider extends Component{
             let snapshot = await db.collection('subListItems').where('listItemID', '==', db.collection('listItems').doc(listID)).get();
             if(snapshot.docs.length > 0){
                 let docsData = [];
-                snapshot.docs.forEach(doc => {
-                    let docData = {id: doc.id, ...doc.data()};
+                snapshot.docs.forEach(async (doc) => {
+                    let docData = {id: doc.id, ...await doc.data()};
+                    let itemData = await doc.data();
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
@@ -53,27 +55,53 @@ export class AboutProvider extends Component{
             return {err: true, data: []};
         }
     }
+    async setHalfSuccessState(aboutContent, skillsContent){
+        await this.setState({
+            ...this.setState,
+            err: false,
+            aboutLoading: false,
+            skillsLoading: true,
+            aboutContent,
+            skillsContent
+        });
+    }
+    async setSuccessState(aboutContent, skillsContent){
+        await this.setState({
+            ...this.setState,
+            err: false,
+            aboutLoading: false,
+            skillsLoading: false,
+            aboutContent,
+            skillsContent
+        });
+    }
+    async setErrorState(){
+        await this.setState({
+            ...this.state,
+            err: true,
+            aboutLoading: false,
+            skillsLoading: false
+        });
+    }
     async componentDidMount(){
-        let aboutData = await this.getAboutData();
-        if(!aboutData.err){
-            let listsData = await this.getSkillLists(aboutData.data.id);
-            await listsData.data.forEach(async (list) => {
-               let subListData = await this.getSkillsListItems(list.id);
-               list.skills = subListData.data;
-            });
-            this.setState({
-                ...this.setState,
-                err: false,
-                loading: false,
-                aboutContent: aboutData.data,
-                skillsContent: listsData.data
-            });
-        }else{
-            this.setState({
-                ...this.state,
-                err: true,
-                loading: false
-            });
+        try{
+            let aboutData = await this.getAboutData();
+            if(!aboutData.err){
+                let skillsData = await this.getSkillLists(aboutData.data.id);
+                await skillsData.data.forEach(async (list) => {
+                    list.skillsList = [];
+                    const subListData = await this.getSkillsListItems(list.id);
+                    list.skillsList = subListData.data;
+                });
+                await this.setSuccessState(aboutData.data, skillsData.data);
+                return;
+            }else{
+                await this.setErrorState();
+                return;
+            }
+        }catch(e){
+            await this.setErrorState();
+            console.log(e);
         }
     }
     render(){
