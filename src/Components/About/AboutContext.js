@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {db} from '../../firebaseInit';
 const AboutContext = React.createContext();
+export const AboutConsumer = AboutContext.Consumer;
 export class AboutProvider extends Component{
     state={
         err: false,
@@ -28,6 +29,9 @@ export class AboutProvider extends Component{
                 let docsData = [];
                 await snapshot.docs.forEach(async (doc) => {
                     let docData = {id: doc.id, ...await doc.data()};
+                    let skillsList = await this.getSkillsListItems(docData.id);
+                    docData.skillsList = skillsList.data;
+                    console.log(skillsList);
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
@@ -44,14 +48,14 @@ export class AboutProvider extends Component{
             if(snapshot.docs.length > 0){
                 let docsData = [];
                 snapshot.docs.forEach(async (doc) => {
-                    let docData = {id: doc.id, ...await doc.data()};
-                    let itemData = await doc.data();
+                    let docData = {id: doc.id, ...doc};             
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
             }
             return {err: false, data: []};
         }catch(e){
+            console.error(e);
             return {err: true, data: []};
         }
     }
@@ -88,11 +92,13 @@ export class AboutProvider extends Component{
             let aboutData = await this.getAboutData();
             if(!aboutData.err){
                 let skillsData = await this.getSkillLists(aboutData.data.id);
-                await skillsData.data.forEach(async (list) => {
-                    list.skillsList = [];
-                    const subListData = await this.getSkillsListItems(list.id);
-                    list.skillsList = subListData.data;
-                });
+                // await skillsData.data.forEach(async (list) => {
+                //     list.skillsList = [];
+                //     const subListData = await this.getSkillsListItems(list.id);
+                //     await subListData.data.forEach(async (skill)=>{
+                //         list.skillsList.push(skill);
+                //     })
+                // });
                 await this.setSuccessState(aboutData.data, skillsData.data);
                 return;
             }else{
@@ -112,4 +118,3 @@ export class AboutProvider extends Component{
         );
     }
 }
-export const AboutConsumer = AboutContext.Consumer;

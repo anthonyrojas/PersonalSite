@@ -2,7 +2,8 @@ import React from 'react';
 import './Skills.css';
 const SkillsItem = (props) => (
     <div className='skill-item'>
-        <img src={props.skill.imageSource} />
+        <p>{props.skill.title}</p>
+        {console.log(props.skill)}
     </div>
 );
 export default SkillsItem;
