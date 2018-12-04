@@ -33,12 +33,13 @@ class Skills extends Component{
             <AboutConsumer>
                 {(context)=>{
                     return(
-                        context.skillsContent.map((skillList) => {
+                        <React.Fragment>
+                        {context.skillsContent.map((skillList) => {
                             return(
                                 <div className='row' key={skillList.id}>
                                     <div className='col-9 col-md-9 col-lg-8'>
                                         <div className='paper'>
-                                            <h3>{skillList.id}</h3>
+                                            <h3>{skillList.title}</h3>
                                             {
                                                 skillList.skilllsList.forEach(skill => {
                                                     console.log(skill)  
@@ -56,7 +57,8 @@ class Skills extends Component{
                                     </div>
                                 </div>
                             );
-                        })
+                        })}
+                        </React.Fragment>
                     );
                 }}
             </AboutConsumer>

@@ -14,7 +14,7 @@ export class AboutProvider extends Component{
         try{
             let snapshot = await db.collection('entries').where('title', '==', 'About').limit(1).get();
             if(snapshot.docs.length > 0){
-                return {err: false, data: {...await snapshot.docs[0].data(), id: snapshot.docs[0].id}};
+                return {err: false, data: {...snapshot.docs[0].data(), id: snapshot.docs[0].id}};
             }
             return {err: true, data: {}};
         }catch(e){
@@ -28,16 +28,16 @@ export class AboutProvider extends Component{
             if(snapshot.docs.length > 0){
                 let docsData = [];
                 await snapshot.docs.forEach(async (doc) => {
-                    let docData = {id: doc.id, ...await doc.data()};
+                    let docData = {id: doc.id, ...doc.data()};
                     let skillsList = await this.getSkillsListItems(docData.id);
                     docData.skillsList = skillsList.data;
-                    console.log(skillsList);
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
             }
             return {err: true, data: []};
         }catch(e){
+            console.error(e);
             return {err: true, data: []};
         }
         // return await db.collection('listItems').where('entryID', '==', entryID).get();
@@ -47,8 +47,8 @@ export class AboutProvider extends Component{
             let snapshot = await db.collection('subListItems').where('listItemID', '==', db.collection('listItems').doc(listID)).get();
             if(snapshot.docs.length > 0){
                 let docsData = [];
-                snapshot.docs.forEach(async (doc) => {
-                    let docData = {id: doc.id, ...doc};             
+                await snapshot.docs.forEach(async (doc) => {
+                    let docData = {id: doc.id, ...doc.data()};             
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
@@ -61,7 +61,7 @@ export class AboutProvider extends Component{
     }
     async setHalfSuccessState(aboutContent, skillsContent){
         await this.setState({
-            ...this.setState,
+            ...this.state,
             err: false,
             aboutLoading: false,
             skillsLoading: true,
@@ -71,12 +71,12 @@ export class AboutProvider extends Component{
     }
     async setSuccessState(aboutContent, skillsContent){
         await this.setState({
-            ...this.setState,
+            ...this.state,
             err: false,
             aboutLoading: false,
             skillsLoading: false,
-            aboutContent,
-            skillsContent
+            aboutContent: aboutContent,
+            skillsContent: skillsContent
         });
     }
     async setErrorState(){
@@ -99,7 +99,15 @@ export class AboutProvider extends Component{
                 //         list.skillsList.push(skill);
                 //     })
                 // });
-                await this.setSuccessState(aboutData.data, skillsData.data);
+                this.setState({
+                    ...this.state,
+                    err: false,
+                    aboutLoading: false,
+                    skillsLoading: false,
+                    aboutContent: aboutData.data,
+                    skillsContent: skillsData.data
+                });
+                //await this.setSuccessState(aboutData.data, skillsData.data);
                 return;
             }else{
                 await this.setErrorState();
@@ -107,7 +115,7 @@ export class AboutProvider extends Component{
             }
         }catch(e){
             await this.setErrorState();
-            console.log(e);
+            console.error(e);
         }
     }
     render(){

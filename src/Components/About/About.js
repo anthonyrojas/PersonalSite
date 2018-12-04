@@ -41,10 +41,7 @@ class About extends Component{
                                 <div className='row'>
                                     <h2 className='section-header'>Skills</h2>
                                 </div>
-                                {
-                                    console.log('pls work')
-                                }
-                                <Skills skillsData={state.skillsContent} />
+                                <Skills skillsContent={state.skillsContent} />
                             </div>
                         </React.Fragment>
                     );
