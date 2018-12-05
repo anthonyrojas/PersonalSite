@@ -1,0 +1,33 @@
+.skill-list-container{
+    align-self: center;
+    text-align: center;
+}
+.skill-list-title{
+    background-color: #FFF;
+    border-radius: 0.15em;
+    box-shadow: 0 1px 8px 1.5px #333;
+    text-align: center;
+    display: inline-block;
+    padding: 0.25em 0.3em;
+}
+.skill-item{
+    background-color: #FFF;
+    border-radius: 0.15em;
+    box-shadow: 0 2px 15px 8px #222;
+    padding: 1em;
+}
+.skill-image{
+    height: 250px;
+    box-shadow: 0 0 8px 1px #444;
+    padding: 0.25em;
+}
+.skill-item-container{
+    padding: 2em;
+}
+.skill-item-name{
+    background-color: rgb(0, 162, 255);
+    color: #FFF;
+    font-weight: bold;
+    padding: 0.25em 0.3em;
+    display: block;
+}
