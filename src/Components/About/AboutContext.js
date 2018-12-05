@@ -60,16 +60,6 @@ export class AboutProvider extends Component{
             return {err: true, data: []};
         }
     }
-    async setHalfSuccessState(aboutContent, skillsContent){
-        await this.setState({
-            ...this.state,
-            err: false,
-            aboutLoading: false,
-            skillsLoading: true,
-            aboutContent,
-            skillsContent
-        });
-    }
     async setSuccessState(aboutContent, skillsContent){
         await this.setState({
             ...this.state,
@@ -98,22 +88,7 @@ export class AboutProvider extends Component{
                     const skillListData = await this.getSkillsListItems(list.id);
                     list.skillsList = skillListData.data;
                 }
-                // await skillsData.data.forEach(async (list) => {
-                //     list.skillsList = [];
-                //     const subListData = await this.getSkillsListItems(list.id);
-                //     await subListData.data.forEach(async (skill)=>{
-                //         list.skillsList.push(skill);
-                //     })
-                // });
-                this.setState({
-                    ...this.state,
-                    err: false,
-                    aboutLoading: false,
-                    skillsLoading: false,
-                    aboutContent: aboutData.data,
-                    skillsContent: skillsData.data
-                });
-                //await this.setSuccessState(aboutData.data, skillsData.data);
+                await this.setSuccessState(aboutData.data, skillsData.data);
                 return;
             }else{
                 await this.setErrorState();

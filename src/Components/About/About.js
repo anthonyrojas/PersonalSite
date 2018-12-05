@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
 import './About.css';
-// import {db, storage} from '../../firebaseInit';
-import {AboutConsumer} from './AboutContext';
 import Image from '../Image/Image';
+import {AboutConsumer} from './AboutContext';
 import Skills from '../Skills/Skills';
+import Loading from '../Loading/Loading';
 class About extends Component{
     render(){
         return(
@@ -11,7 +11,7 @@ class About extends Component{
             {(state) =>{
                 if(state.aboutLoading || state.skillsLoading){
                     return(
-                        <p>Loading...</p>
+                        <Loading />
                     );
                 }else if(state.err){
                     return(
@@ -27,7 +27,7 @@ class About extends Component{
                                     <h2 className='section-header'>About Me</h2>
                                 </div>
                                 <div className='row'>
-                                    <img src={state.aboutContent.imageSource} alt="profile image" className='profile-image'/>
+                                    <Image imageSource={state.aboutContent.imageSource} altText='profile image' imgClass='profile-image' loader='profile-loader'/>
                                 </div>
                                 <div className='row'>
                                     <div className='col-lg-8 col-md-9'>
@@ -53,3 +53,4 @@ class About extends Component{
     }
 }
 export default About;
+// <img src={state.aboutContent.imageSource} alt="profile image" className='profile-image'/>

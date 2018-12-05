@@ -28,20 +28,29 @@
     border-radius: 100%;
     margin: 2em 0;
     box-shadow: 0 0 6px 2px #444;
-    animation: loadProfileImage 0.5s;
+    animation: loadProfileImage 0.4s;
     animation-iteration-count: infinite;
     background-color: #DDD;
 }
 @keyframes loadProfileImage{
-    from   {     
-        background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);
-        /* opacity:1; */
+    0%{
+        background-color: #FFF;
     }
-    to {     
-        background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%);
-        /* opacity:0.5;  */
+    50%{
+        background-color: aliceblue;
+    }
+    100%{
+        background-color: #04BCFF;
     }
 }
+/* @keyframes loadProfileImage{
+    from   {     
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 50%,rgba(204,204,204,1) 50%);
+    }
+    to {     
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(204, 204, 204, 1) 50%,rgba(255,255,255,1) 50%);
+    }
+} */
 /* @keyframes loadProfileImage{
     0%{
         background: linear-gradient(to top left, #DDD 100%, #AAA 0%);

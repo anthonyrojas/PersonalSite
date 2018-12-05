@@ -37,7 +37,7 @@ class Image extends Component{
     render(){
         return(
             <React.Fragment>
-                <img src={this.props.imageSource} onLoad={this.imageLoaded.bind(this)} className={this.props.className} style={this.state.loading ? {display: 'none'} : null} />
+                <img src={this.props.imageSource} onLoad={this.imageLoaded.bind(this)} alt={this.props.altText} className={this.props.imgClass} style={this.state.loading ? {display: 'none'} : null} />
                 <div ref={loader=>{this.loader=loader;}} className={this.props.loader} style={this.state.loading ? {height: this.state.loaderHeight} : {display: 'none'}}></div>
             </React.Fragment>
         );
