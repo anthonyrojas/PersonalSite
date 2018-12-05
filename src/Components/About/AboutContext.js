@@ -18,6 +18,7 @@ export class AboutProvider extends Component{
             }
             return {err: true, data: {}};
         }catch(e){
+            console.error(e);
             return {err: true, data: {}};
         }
         // return await db.collection('entries').where('title', '==', 'About').limit(1).get();
@@ -29,8 +30,8 @@ export class AboutProvider extends Component{
                 let docsData = [];
                 await snapshot.docs.forEach(async (doc) => {
                     let docData = {id: doc.id, ...doc.data()};
-                    let skillsList = await this.getSkillsListItems(docData.id);
-                    docData.skillsList = skillsList.data;
+                    // let skillsList = await this.getSkillsListItems(docData.id);
+                    // docData.skillsList = skillsList.data;
                     docsData.push(docData);
                 });
                 return {err: false, data: docsData};
@@ -92,6 +93,11 @@ export class AboutProvider extends Component{
             let aboutData = await this.getAboutData();
             if(!aboutData.err){
                 let skillsData = await this.getSkillLists(aboutData.data.id);
+                for(let list of skillsData.data){
+                    list.skillsList = [];
+                    const skillListData = await this.getSkillsListItems(list.id);
+                    list.skillsList = skillListData.data;
+                }
                 // await skillsData.data.forEach(async (list) => {
                 //     list.skillsList = [];
                 //     const subListData = await this.getSkillsListItems(list.id);
@@ -117,6 +123,9 @@ export class AboutProvider extends Component{
             await this.setErrorState();
             console.error(e);
         }
+    }
+    async componentDidUpdate(){
+        console.log(this.state);
     }
     render(){
         return(
