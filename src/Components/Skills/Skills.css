@@ -1,33 +1,79 @@
+.skill-list-paper{
+    padding: 1em 0.25em;
+}
 .skill-list-container{
-    align-self: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+.skill-list-header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0.25em 0;
 }
 .skill-list-title{
     background-color: #FFF;
     border-radius: 0.15em;
     box-shadow: 0 1px 8px 1.5px #333;
-    text-align: center;
-    display: inline-block;
-    padding: 0.25em 0.3em;
-}
-.skill-item{
-    background-color: #FFF;
-    border-radius: 0.15em;
-    box-shadow: 0 2px 15px 8px #222;
-    padding: 1em;
+    padding: 0.3em 0.4em;
 }
 .skill-image{
     height: 250px;
-    box-shadow: 0 0 8px 1px #444;
     padding: 0.25em;
 }
-.skill-item-container{
-    padding: 2em;
+.skill-list{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 88%;
+    align-items: center;
+    justify-content: center;
 }
 .skill-item-name{
     background-color: rgb(0, 162, 255);
     color: #FFF;
     font-weight: bold;
     padding: 0.25em 0.3em;
+}
+.left-slide-btn, .right-slide-btn{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 8%;
+    padding: 2em 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+}
+.left-slide-btn:hover,.right-slide-btn:hover{
+
+}
+.slider-icon{
+    width: 6%;
+    background-color: #FFF;
+    padding: 1em 0;
+    font-size: 200%;
+}
+.slider-icon:hover{
+    background-color: #0091FF;
+    background: linear-gradient(to bottom, #0072ff, #00c6ff);
+    color: #FFF;
+    box-shadow: 0 0 12px 4px #222;
+    cursor: pointer;
+}
+.skill-list-item{
+    display: none;
+    z-index: 3;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 0.15em;
+    box-shadow: 0 2px 15px 8px #222;
+    padding: 1em;
+}
+.active{
     display: block;
+    animation: fadeIn 0.8s;
 }

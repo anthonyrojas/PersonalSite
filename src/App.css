@@ -16,7 +16,7 @@ main{
 .paper{
   background-color: #444;
   /* background: radial-gradient(rgba(68,68,68, 1), rgba(34,34,34,1)); */
-  box-shadow: 0 1px 10px 2.5px #333;
+  box-shadow: 0 1px 12px 3px #333;
   margin: 2em 0;
   width: 100%;
   border: none;
@@ -234,5 +234,13 @@ main{
     display: flex;
     flex-flow: column wrap;
     width: 100%;
+  }
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }

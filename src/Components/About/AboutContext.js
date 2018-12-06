@@ -99,9 +99,6 @@ export class AboutProvider extends Component{
             console.error(e);
         }
     }
-    async componentDidUpdate(){
-        console.log(this.state);
-    }
     render(){
         return(
             <AboutContext.Provider value={{...this.state}}>
