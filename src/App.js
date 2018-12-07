@@ -10,6 +10,7 @@ import {AboutProvider} from './Components/About/AboutContext';
 import firebaseConn from './firebaseInit';
 import Aux from './HOC/AuxHOC';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
+import Footer from './Footer/Footer';
 class App extends Component {
   constructor(props){
     super(props);
@@ -39,10 +40,11 @@ class App extends Component {
               <Route path='/education' component={Education}/>
               <Route path='/projects' component={Projects}/>
             </Switch>
-            <button className='nav-btn ripple' onClick={this.toggleNav.bind(this)}><i className='material-icons'>menu</i></button>
+            <button className='nav-btn ripple' onClick={this.toggleNav.bind(this)}><i className='fas fa-bars'></i></button>
           </main>
         </Aux>
         </Router>
+        <Footer />
       </div>
     );
   }

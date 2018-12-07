@@ -36,16 +36,16 @@ class SkillsSlider extends Component{
     }
     render(){
         return(
-            <div className='skill-list-container'>
-                <i className='material-icons slider-icon' onClick={this.previousSlide.bind(this)}>chevron_left</i>                                            
+            <div className='skill-list-container'>                                            
                 <ul className='skill-list'>
                 {
                     this.state.skills.map((skill, index)=>(
                         <SkillsItem currentSlide={this.state.currentIndex} skill={skill} key={skill.id} index={index}/>
                     ))
                 }
-                </ul>                                            
-                <i className='material-icons slider-icon' onClick={this.nextSlide.bind(this)}>chevron_right</i>                                            
+                </ul>
+                <i className='fas fa-chevron-left slider-icon left-slider' onClick={this.previousSlide.bind(this)}></i>                                            
+                <i className='fas fa-chevron-right slider-icon right-slider' onClick={this.nextSlide.bind(this)}></i>                                            
             </div>            
         );
     }
