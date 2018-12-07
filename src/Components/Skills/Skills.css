@@ -1,5 +1,5 @@
 .skill-list-paper{
-    padding: 1em 0.25em;
+    padding: 0 0.25em;
 }
 .skill-list-container{
     display: flex;
@@ -24,7 +24,7 @@
     padding: 0.3em 0.4em;
 }
 .skill-image{
-    height: 225px;
+    height: 12em;
     padding: 0.25em;
 }
 .skill-list{
@@ -80,4 +80,33 @@
     justify-content: center;
     align-items: center;
     animation: fadeIn 0.8s;
+}
+@media screen and (max-width: 796px){
+    .skill-image{
+        height: 6em;
+        padding: 0;
+    }
+    .skill-list-paper{
+        padding: 1em 0;
+    }
+    .skill-list{
+        width: 98%;
+        order: 0;
+    }
+    .left-slider{
+        order: 1;
+    }
+    .right-slider{
+        order: 2;
+    }
+    .slider-icon{
+        width: 25%;
+        margin: 0 0.25em;
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+        font-size: 125%;
+    }
+    .skill-list-paper{
+        padding: 0;
+    }
 }

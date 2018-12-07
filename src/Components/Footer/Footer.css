@@ -1,0 +1,30 @@
+footer .row{
+    padding: 5em 0;
+}
+footer [class^="col"]{
+    margin: 2.5em 0;
+}
+.footer-link{
+    color: #FFF;
+}
+.footer-link:visited{
+    color: #FFF;
+}
+.footer-link:hover{
+    color: #A1CDF3;
+    animation: pulseFooterLink 1.5s;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+}
+
+@keyframes pulseFooterLink {
+    0% {
+      box-shadow: 0 0 0 1px rgba(140,210,255, 1);
+    }
+    70% {
+        box-shadow: 0 0 0 1em rgba(140,210,255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(140,210,255, 0);
+    }
+}

@@ -10,7 +10,7 @@ class Skills extends Component{
                     this.props.skillsContent.map((skillList) => {
                         return(
                             <div className='row' key={skillList.id}>
-                                <div className='col-9 col-md-9 col-lg-8'>
+                                <div className='col-9 col-md-9 col-lg-7'>
                                     <div className='paper skill-list-paper'>
                                         <div className='skill-list-header'>
                                             <h3 className='skill-list-title'>{skillList.title}</h3>

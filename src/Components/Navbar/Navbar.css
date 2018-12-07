@@ -5,6 +5,7 @@ nav{
     position: fixed;
     height: 100vh;
     left: -20em;
+    z-index: 5;
 }
 ul{
     list-style: none;

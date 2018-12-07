@@ -10,7 +10,7 @@ import {AboutProvider} from './Components/About/AboutContext';
 import firebaseConn from './firebaseInit';
 import Aux from './HOC/AuxHOC';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import Footer from './Footer/Footer';
+import Footer from './Components/Footer/Footer';
 class App extends Component {
   constructor(props){
     super(props);
@@ -30,7 +30,7 @@ class App extends Component {
         <Header />
         <Router>
         <Aux>
-          <Navbar visible={this.state.navVisibility} />
+          <Navbar toggleNav={this.toggleNav} visible={this.state.navVisibility} />
           <main>
             <Switch>
               <AboutProvider>

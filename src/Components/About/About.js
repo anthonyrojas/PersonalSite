@@ -30,7 +30,7 @@ class About extends Component{
                                     <Image imageSource={state.aboutContent.imageSource} altText='profile image' imgClass='profile-image' loader='profile-loader'/>
                                 </div>
                                 <div className='row'>
-                                    <div className='col-lg-8 col-md-9'>
+                                    <div className='col-md-9 col-lg-8'>
                                         <div className='paper'>
                                             <div className='section-description'>
                                                     <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span>
