@@ -26,3 +26,60 @@
     align-items: center;
     justify-content: center;
 }
+.courses-list-container{
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.courses-btn{
+    background-color: #009AFF;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border-radius: 0.15em;
+    box-shadow: 0 1px 3.5em -0.02em #333;
+}
+.ripple-courses-btn{
+    background-position: center;
+    transition: background 0.8s;
+}
+.ripple-courses-btn:hover {
+    background: rgba(255,255,255,0.5) radial-gradient(circle, transparent 1%, #FFF 1%) center/15000%;
+    box-shadow: 0 -1px 10px 2px #565656;
+}
+.ripple-courses-btn:active {
+    background-color: linear-gradient(to right, #00c3ee,#009AFF);
+    background-size: 100%;
+    transition: background 0s;
+}
+.courses-list{
+    list-style: none;
+}
+.courses-list-item{
+    padding: 0.3em 0.5em;
+    border-left: 0.25em solid rgb(0, 119, 255);
+    box-shadow: 0 1px 3.5em -0.1em #333;
+    margin: 0.15em 0;
+}
+.course-number{
+    font-weight: bold;
+}
+@media screen and (max-width: 796px){
+    .school-logo{
+        width: 50%;
+        padding: 0.15em;
+    }
+    .school-header{
+        width: 90%;
+        padding: 0.25em 0.1em;
+    }
+    .courses-list-container{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 500px){
+    .courses-list-container{
+        width: 90%;
+    }
+}

@@ -4,10 +4,14 @@ class SchoolCourses extends Component{
         showCourses: false,
         courses: this.props.courses
     }
+    toggleCoursesVisibility(){
+        this
+    }
     render(){
         return(
             <div className='courses-list-container'>
-                <ul className='courses-list'>
+                <button className='courses-btn' onClick={this.toggleCoursesVisibility.bind(this)}>Show Courses</button>
+                <ul className={this.state.showCourses ? 'courses-list' : 'no-display'}>
                     {
                         this.state.courses.map((course)=>(
                             <li className='courses-list-item' key={course.id}>
@@ -16,7 +20,6 @@ class SchoolCourses extends Component{
                         ))
                     }
                 </ul>
-                <button className='courses-btn'>Show Courses</button>
             </div>
         );
     }

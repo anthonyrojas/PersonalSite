@@ -40,7 +40,7 @@ class App extends Component {
               <Route path='/education' component={Education}/>
               <Route path='/projects' component={Projects}/>
             </Switch>
-            <button className='nav-btn ripple' onClick={this.toggleNav.bind(this)}><i className='fas fa-bars'></i></button>
+            <button className='nav-btn ripple-nav-btn' onClick={this.toggleNav.bind(this)}><i className='fas fa-bars'></i></button>
           </main>
         </Aux>
         </Router>
