@@ -15,7 +15,6 @@ class Skills extends Component{
                                         <div className='skill-list-header'>
                                             <h3 className='skill-list-title'>{skillList.title}</h3>
                                         </div>
-
                                         <SkillsSlider skillsContent={skillList}/>
                                     </div>
                                 </div>

@@ -15,9 +15,9 @@ class About extends Component{
                     );
                 }else if(state.err){
                     return(
-                        <React.Fragment>
+                        <div className='error-page-display'>
                             <p>Error loading data...</p>
-                        </React.Fragment>
+                        </div>
                     );
                 }else{
                     return(
@@ -33,7 +33,7 @@ class About extends Component{
                                     <div className='col-md-9 col-lg-8'>
                                         <div className='paper'>
                                             <div className='section-description'>
-                                                    <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span>
+                                                <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span>
                                             </div>
                                         </div>
                                     </div>

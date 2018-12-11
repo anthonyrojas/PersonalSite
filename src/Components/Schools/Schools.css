@@ -1,0 +1,28 @@
+.school-paper-container{
+    padding: 0 0.25em;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+.school-logo{
+    width: 20%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 0.1em;
+    align-items: center;
+    justify-content: center;
+}
+.school-logo-img{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 1px 15px -1.5px #333;
+}
+.school-header{
+    width: 75%;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0 0.05em;
+    align-items: center;
+    justify-content: center;
+}

@@ -30,7 +30,7 @@ class App extends Component {
         <Header />
         <Router>
         <Aux>
-          <Navbar toggleNav={this.toggleNav} visible={this.state.navVisibility} />
+          <Navbar visible={this.state.navVisibility} />
           <main>
             <Switch>
               <AboutProvider>
