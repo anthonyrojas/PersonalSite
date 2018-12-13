@@ -5,7 +5,6 @@ class SchoolCourses extends Component{
         courses: this.props.courses
     }
     toggleCoursesVisibility(){
-        this
     }
     render(){
         return(

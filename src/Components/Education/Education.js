@@ -5,13 +5,6 @@ import {EducationConsumer} from './EducationContext';
 import Loading from '../Loading/Loading';
 import Schools from '../Schools/Schools';
 class Education extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            statusCode: 404,
-            content: ''
-        }
-    }
     render(){
         return(
             <EducationConsumer>

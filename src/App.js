@@ -7,6 +7,7 @@ import Work from './Components/Work/Work';
 import Projects from './Components/Projects/Projects';
 import Navbar from './Components/Navbar/Navbar';
 import {AboutProvider} from './Components/About/AboutContext';
+import {EducationProvider} from './Components/Education/EducationContext';
 import firebaseConn from './firebaseInit';
 import Aux from './HOC/AuxHOC';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
@@ -37,7 +38,9 @@ class App extends Component {
                 <Route exact path='/' component={About}/>
               </AboutProvider>
               <Route path='/work' component={Work}/>
-              <Route path='/education' component={Education}/>
+              <EducationProvider>
+                <Route path='/education' component={Education} />
+              </EducationProvider>
               <Route path='/projects' component={Projects}/>
             </Switch>
             <button className='nav-btn ripple-nav-btn' onClick={this.toggleNav.bind(this)}><i className='fas fa-bars'></i></button>

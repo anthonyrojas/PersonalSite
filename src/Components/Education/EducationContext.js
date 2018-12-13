@@ -22,9 +22,9 @@ export class EducationProvider extends Component{
     }
     async fetchSchools(educationID){
         try{
+            let docsData=[];
             let snapshot = await db.collection('listItems').where('entryID', '==', await db.collection('entries').doc(educationID)).get();
             if(snapshot.docs.length > 0){
-                let docsData = [];
                 await snapshot.docs.forEach(async(doc)=>{
                     let docData = {id: doc.id, ...doc.data()};
                     docsData.push(docData);
@@ -42,9 +42,9 @@ export class EducationProvider extends Component{
     }
     async fetchCourses(schoolID){
         try{
+            let docsData = [];
             let snapshot = await db.collection('subListItems').where('listItemID', '==', db.collection('listItems').doc(schoolID)).get();
             if(snapshot.docs.length > 0){
-                let docsData = [];
                 await snapshot.docs.forEach(async (doc)=>{
                     let docData = {id: doc.id, ...doc.data()};
                     docsData.push(docData);
