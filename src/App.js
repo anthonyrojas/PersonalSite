@@ -33,16 +33,14 @@ class App extends Component {
         <Aux>
           <Navbar visible={this.state.navVisibility} />
           <main>
-            <Switch>
               <AboutProvider>
                 <Route exact path='/' component={About}/>
               </AboutProvider>
-              <Route path='/work' component={Work}/>
               <EducationProvider>
                 <Route path='/education' component={Education} />
               </EducationProvider>
+              <Route path='/work' component={Work}/>
               <Route path='/projects' component={Projects}/>
-            </Switch>
             <button className='nav-btn ripple-nav-btn' onClick={this.toggleNav.bind(this)}><i className='fas fa-bars'></i></button>
           </main>
         </Aux>

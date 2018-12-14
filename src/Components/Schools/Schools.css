@@ -1,5 +1,5 @@
 .school-paper-container{
-    padding: 0 0.25em;
+    padding: 1.5em 0.25em;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -16,51 +16,75 @@
 .school-logo-img{
     width: 100%;
     border-radius: 50%;
-    box-shadow: 0 1px 15px -1.5px #333;
+    box-shadow: 0 1px 2.8em -0.1em #222;
 }
 .school-header{
-    width: 75%;
+    width: 70%;
+    margin-left: 5%;
     display: flex;
     flex-flow: column wrap;
-    padding: 0 0.05em;
+    padding: 0.5em 0.05em;
     align-items: center;
     justify-content: center;
+    background-color: #FFF;
+    box-shadow: 0 1px 2.8em -0.1em #222;
+}
+.school-title{
+    font-size: 1.9em;
+    margin-bottom: 0;
+}
+.school-degree{
+    font-size: 1.35em;
+    margin-bottom: 0;
+}
+.school-years{
+    font-size: 1.1em;
 }
 .courses-list-container{
+    padding-top: 1em;
     text-align: center;
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
 }
 .courses-btn{
-    background-color: #009AFF;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+    background-color: rgb(2, 142, 235);
+    color: #FFF;
     border-radius: 0.15em;
-    box-shadow: 0 1px 3.5em -0.02em #333;
+    box-shadow: 0 1px 3.5em -0.01em #222;
+    padding: 1em 2em;
+    font-size: 0.9em;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
 }
 .ripple-courses-btn{
     background-position: center;
     transition: background 0.8s;
 }
 .ripple-courses-btn:hover {
-    background: rgba(255,255,255,0.5) radial-gradient(circle, transparent 1%, #FFF 1%) center/15000%;
+    cursor: pointer;
+    background: rgb(38, 168, 255) radial-gradient(circle, transparent 1%, rgb(38, 168, 255) 1%) center/15000%;
     box-shadow: 0 -1px 10px 2px #565656;
 }
 .ripple-courses-btn:active {
-    background-color: linear-gradient(to right, #00c3ee,#009AFF);
+    background-color: rgb(130, 204, 253);
     background-size: 100%;
     transition: background 0s;
 }
 .courses-list{
     list-style: none;
+    width: 100%;
 }
 .courses-list-item{
-    padding: 0.3em 0.5em;
-    border-left: 0.25em solid rgb(0, 119, 255);
-    box-shadow: 0 1px 3.5em -0.1em #333;
-    margin: 0.15em 0;
+    border-left: 0.4em solid rgb(0, 119, 255);
+    box-shadow: 0 1px 2.25em -0.1em #222;
+    background-color: #FFF;
+    margin: 1.5em 0;
+    padding: 0.6em 0;
+    border-radius: 0.15em;
 }
 .course-number{
     font-weight: bold;

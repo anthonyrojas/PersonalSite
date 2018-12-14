@@ -37,7 +37,7 @@ class Education extends Component{
                                     <div className='row'>
                                         <h2 className='section-header'>Schools Attended</h2>
                                     </div>
-                                    <Schools schools={context.schools}/>
+                                    <Schools schools={context.educationContent.schools}/>
                                 </div>
                             </React.Fragment>
                         );

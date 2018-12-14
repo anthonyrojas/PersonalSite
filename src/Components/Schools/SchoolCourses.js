@@ -5,11 +5,15 @@ class SchoolCourses extends Component{
         courses: this.props.courses
     }
     toggleCoursesVisibility(){
+        this.setState({
+            ...this.state,
+            showCourses: !this.state.showCourses
+        });
     }
     render(){
         return(
             <div className='courses-list-container'>
-                <button className='courses-btn' onClick={this.toggleCoursesVisibility.bind(this)}>Show Courses</button>
+                <button className='courses-btn ripple-courses-btn' onClick={this.toggleCoursesVisibility.bind(this)}>Show Courses</button>
                 <ul className={this.state.showCourses ? 'courses-list' : 'no-display'}>
                     {
                         this.state.courses.map((course)=>(
