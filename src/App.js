@@ -8,30 +8,19 @@ import Projects from './Components/Projects/Projects';
 import Navbar from './Components/Navbar/Navbar';
 import {AboutProvider} from './Components/About/AboutContext';
 import {EducationProvider} from './Components/Education/EducationContext';
+import {ProjectsProvider} from './Components/Projects/ProjectsContext';
 import firebaseConn from './firebaseInit';
 import Aux from './HOC/AuxHOC';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={
-      navVisibility: false
-    }
-  }
-  toggleNav(e){
-    this.setState({
-      ...this.state,
-      navVisibility: !this.state.navVisibility
-    });
-  }
   render() {
     return (
       <div className="App">
         <Header />
         <Router>
         <Aux>
-          <Navbar visible={this.state.navVisibility} />
+          <Navbar/>
           <main>
               <AboutProvider>
                 <Route exact path='/' component={About}/>
@@ -40,8 +29,9 @@ class App extends Component {
                 <Route path='/education' component={Education} />
               </EducationProvider>
               <Route path='/work' component={Work}/>
-              <Route path='/projects' component={Projects}/>
-            <button className='nav-btn ripple-nav-btn' onClick={this.toggleNav.bind(this)}><i className='fas fa-bars'></i></button>
+              <ProjectsProvider>
+                <Route path='/projects' component={Projects} />
+              </ProjectsProvider>
           </main>
         </Aux>
         </Router>

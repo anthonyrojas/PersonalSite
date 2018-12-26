@@ -41,7 +41,9 @@ header h1{
     border-radius: 0.2rem;
     box-shadow: 0 0 8px 3px #333;
 }
-
+#header-name{
+    text-align: center;
+}
 @media screen and (max-width: 500px){
     #header-name{
         font-size: 3.5em;
