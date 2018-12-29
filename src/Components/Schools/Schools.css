@@ -79,10 +79,10 @@
     width: 100%;
 }
 .courses-list-item{
-    border-left: 0.4em solid rgb(0, 119, 255);
+    border-left: 0.5em solid rgb(0, 140, 255);
     box-shadow: 0 1px 2.25em -0.1em #222;
     background-color: #FFF;
-    margin: 1.5em 0;
+    margin: 1em 0;
     padding: 0.6em 0;
     border-radius: 0.15em;
 }
@@ -106,4 +106,28 @@
     .courses-list-container{
         width: 90%;
     }
+}
+.toggle-courses-enter{
+    transform: translateY(0.1);
+}
+.toggle-courses-enter-active{
+    transform: translateY(0.9);
+}
+.toggle-courses-exit{
+    transform: translateY(0.5);
+}
+.toggle-courses-exit-active{
+    transform: translateY(0.1);
+}
+.fade-class-enter{
+    opacity: 0.1;
+}
+.fade-class-enter-active{
+    opacity: 0.9;
+}
+.fade-class-exit{
+    opacity: 0.9;
+}
+.fade-class-exit-active{
+    opacity: 0.1;
 }

@@ -43,7 +43,7 @@ export class EducationProvider extends Component{
     async fetchCourses(schoolID){
         try{
             let docsData = [];
-            let snapshot = await db.collection('subListItems').where('listItemID', '==', db.collection('listItems').doc(schoolID)).get();
+            let snapshot = await db.collection('subListItems').where('listItemID', '==', db.collection('listItems').doc(schoolID)).orderBy('title', 'asc').get();
             if(snapshot.docs.length > 0){
                 await snapshot.docs.forEach(async (doc)=>{
                     let docData = {id: doc.id, ...doc.data()};

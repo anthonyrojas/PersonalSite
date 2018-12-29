@@ -39,35 +39,8 @@ footer{
   padding: 1em;
   color: #FFF;
 }
-.ripple-nav-btn{
-  background-position: center;
-  transition: background 0.8s;
-}
-.ripple-nav-btn:hover {
-  background: #504099 radial-gradient(circle, transparent 1%, #504099 1%) center/15000%;
-  box-shadow: 0 -1px 10px 2px #565656;
-}
-.ripple-nav-btn:active {
-  background-color: #a8c0ff;
-  background-size: 100%;
-  transition: background 0s;
-}
 .no-display{
   display: none;
-}
-.nav-btn{
-  right: 1.5em;
-  bottom: 1.5em;
-  position: fixed;
-  border-radius: 50%;
-  padding: 1em;
-  background-color: #3f2b96;
-  color: #FFF;
-  outline: none;
-  border: 0.5px solid #3f2b96;
-  box-shadow: 0 -1px 9px 1px #565656;
-  z-index: 100;
-  font-size: 125%;
 }
 /*custom grid system*/
 .flex-center{

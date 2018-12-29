@@ -10,7 +10,6 @@ import {AboutProvider} from './Components/About/AboutContext';
 import {EducationProvider} from './Components/Education/EducationContext';
 import {ProjectsProvider} from './Components/Projects/ProjectsContext';
 import firebaseConn from './firebaseInit';
-import Aux from './HOC/AuxHOC';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 class App extends Component {
@@ -19,9 +18,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <Router>
-        <Aux>
-          <Navbar/>
-          <main>
+        <Switch>
+          <React.Fragment>
+            <Navbar/>
+            <main>
               <AboutProvider>
                 <Route exact path='/' component={About}/>
               </AboutProvider>
@@ -32,8 +32,9 @@ class App extends Component {
               <ProjectsProvider>
                 <Route path='/projects' component={Projects} />
               </ProjectsProvider>
-          </main>
-        </Aux>
+            </main>
+          </React.Fragment>
+        </Switch>
         </Router>
         <Footer />
       </div>

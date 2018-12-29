@@ -29,10 +29,15 @@
     margin: 1em 0;
 }
 .project-title{
-    background-color: rgb(0, 132, 255);
     color: #FFF;
     padding: 0.75em;
     box-shadow: 0 1px 30px -1px #111;
+}
+.project-in-progress{
+    background-color: rgb(255, 145, 0);
+}
+.project-complete{
+    background-color: rgb(0, 132, 255);
 }
 @media screen and (min-width: 1024px){
     .project-container{
