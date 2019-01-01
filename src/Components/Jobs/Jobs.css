@@ -41,6 +41,38 @@
 .job-timeline{
     font-size: 1.1em;
 }
+.duties-list-container{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 1em 0;
+}
+.duties-list{
+    list-style: none;
+    width: 100%;
+    margin: 0;
+}
+.duties-list-item{
+    width: 100%;
+    background-color: #FFF;
+    padding: 0.6em 0.5em;
+    margin: 0.7em 0;
+    text-align: left;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 15px -1px #111;
+    border-left: 0.3em solid rgb(0, 153, 255);
+}
+.duties-list-header{
+    background-color: rgb(2, 142, 235);
+    padding: 1em 2em;
+    box-shadow: 0 1px 15px 1px #222;
+    color: #FFF;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
 @media screen and (max-width: 976px){
     .job-logo{
         width: 30%;
@@ -63,6 +95,13 @@
         width: 90%;
         margin: 0;
         padding: 0 0.5em;
+    }
+    .duties-list-container{
+        width: 90%;
+    }
+    .duties-list-item{
+        margin-left: -0.75em;
+        border-left-width: 0.25em;
     }
     .job-title{
         font-size: 1.75em;

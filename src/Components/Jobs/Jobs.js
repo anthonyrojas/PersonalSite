@@ -1,5 +1,6 @@
 import React from 'react';
 import './Jobs.css';
+import JobDuties from './JobDuties';
 const Jobs = (props) =>(
     <div className='jobs'>
         {
@@ -14,6 +15,7 @@ const Jobs = (props) =>(
                                 <p className='job-location'>{job.location}</p>
                                 <p className='job-timeline'>{job.startDate} to {job.endDate !== '' ? job.endDate : 'Present'}</p>
                             </div>
+                            <JobDuties duties={job.duties}/>
                         </div>
                     </div>
                 </div>
