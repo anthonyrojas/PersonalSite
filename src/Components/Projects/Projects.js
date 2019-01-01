@@ -25,7 +25,7 @@ class Projects extends Component{
                                     <h2 className='section-header'>Projects</h2>
                                 </div>
                                 <div className='row'>
-                                    <div className='col-md-8'>
+                                    <div className='col-10 col-md-8 col-lg-7'>
                                         <div className='paper'>
                                             <div className='section-description' dangerouslySetInnerHTML={{__html: context.projectsContent.body}}></div>
                                         </div>

@@ -44,3 +44,8 @@
         padding: 1em;
     }
 }
+@media screen and (max-width: 500px){
+    .project-col{
+        margin: 1em 0.5em;
+    }
+}

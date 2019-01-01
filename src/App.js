@@ -9,7 +9,7 @@ import Navbar from './Components/Navbar/Navbar';
 import {AboutProvider} from './Components/About/AboutContext';
 import {EducationProvider} from './Components/Education/EducationContext';
 import {ProjectsProvider} from './Components/Projects/ProjectsContext';
-import firebaseConn from './firebaseInit';
+import {WorkProvider} from './Components/Work/WorkContext';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 class App extends Component {
@@ -28,7 +28,9 @@ class App extends Component {
               <EducationProvider>
                 <Route path='/education' component={Education} />
               </EducationProvider>
-              <Route path='/work' component={Work}/>
+              <WorkProvider>
+                <Route path='/work' component={Work}/>
+              </WorkProvider>
               <ProjectsProvider>
                 <Route path='/projects' component={Projects} />
               </ProjectsProvider>

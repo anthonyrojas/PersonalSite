@@ -19,6 +19,10 @@
     box-shadow: 0 1px 2.8em -0.1em #222;
 }
 .school-header{
+    background: radial-gradient(#396afc,#2948ff);
+    background-color: #2948ff;
+    color: #FFF;
+    border-radius: 0.15em;
     width: 70%;
     margin-left: 5%;
     display: flex;
@@ -26,8 +30,8 @@
     padding: 0.5em 0.05em;
     align-items: center;
     justify-content: center;
-    background-color: #FFF;
     box-shadow: 0 1px 2.8em -0.1em #222;
+    text-align: center;
 }
 .school-title{
     font-size: 1.9em;
@@ -89,45 +93,57 @@
 .course-number{
     font-weight: bold;
 }
-@media screen and (max-width: 796px){
+@media screen and (max-width: 976px){
     .school-logo{
-        width: 50%;
+        width: 35%;
         padding: 0.15em;
+        margin-bottom: 1.5em;
     }
     .school-header{
         width: 90%;
         padding: 0.25em 0.1em;
+        margin-left: 0;
     }
     .courses-list-container{
         width: 70%;
+    }
+}
+@media screen and (max-width: 796px){
+    .school-logo{
+        width: 50%;
+        padding: 0.15em;
+        margin-bottom: 1.5em;
     }
 }
 @media screen and (max-width: 500px){
     .courses-list-container{
         width: 90%;
     }
+    .courses-list-item{
+        border-left: 0.25em solid rgb(0, 140, 255);
+    }
 }
-.toggle-courses-enter{
-    transform: translateY(0.1);
+.toggle-courses-enter, .toggle-courses-enter-active, .toggle-courses-enter-done{
+    animation-name: classesAppear;
+    animation-duration: 1200ms;
 }
-.toggle-courses-enter-active{
-    transform: translateY(0.9);
+.toggle-courses-exit, .toggle-courses-exit-active, .toggle-courses-exit-done{
+    animation-name: classesDisappear;
+    animation-duration: 1200ms;
 }
-.toggle-courses-exit{
-    transform: translateY(0.5);
+@keyframes classesAppear{
+    from{
+        transform: scaleY(0.1);
+    }
+    to{
+        transform: scaleY(1);
+    }
 }
-.toggle-courses-exit-active{
-    transform: translateY(0.1);
-}
-.fade-class-enter{
-    opacity: 0.1;
-}
-.fade-class-enter-active{
-    opacity: 0.9;
-}
-.fade-class-exit{
-    opacity: 0.9;
-}
-.fade-class-exit-active{
-    opacity: 0.1;
+@keyframes classesDisappear{
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
 }

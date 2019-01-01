@@ -15,18 +15,16 @@ class SchoolCourses extends Component{
         return(
             <div className='courses-list-container'>
                 <button className='courses-btn ripple-courses-btn' onClick={this.toggleCoursesVisibility.bind(this)}>{this.state.showCourses ? 'Hide' : 'Show'} Courses</button>
-                <CSSTransition in={this.state.showCourses} timeout={1000} classNames='toggle-courses' unmountOnExit>
-                    <TransitionGroup component='ul' className='courses-list'>
+                <CSSTransition in={this.state.showCourses} timeout={1200} classNames='toggle-courses' unmountOnExit>
+                    <ul className='courses-list'>
                         {
                             this.state.courses.map((course)=>(
-                                <CSSTransition key={course.id} in={this.state.showCourses} timeout={500} classNames='fade-class'>
-                                    <li className='courses-list-item' key={course.id}>
-                                        <span className='course-number'>{course.title}</span> : {course.body}
-                                    </li>
-                                </CSSTransition>
+                                <li className='courses-list-item' key={course.id}>
+                                    <span className='course-number'>{course.title}</span> : {course.body}
+                                </li>
                             ))
                         }
-                    </TransitionGroup>
+                    </ul>
                 </CSSTransition>
             </div>
         );
