@@ -31,11 +31,11 @@ class About extends Component{
                                 </div>
                                 <div className='row'>
                                     <div className='col-10 col-md-8 col-lg-7'>
-                                        <div className='paper'>
-                                            <div className='section-description'>
-                                                <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span>
+                                            <div className='paper'>
+                                                <div className='section-description'>
+                                                    <span dangerouslySetInnerHTML={{__html: state.aboutContent.body}}></span>
+                                                </div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className='row'>

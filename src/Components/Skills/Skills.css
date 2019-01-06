@@ -18,10 +18,11 @@
     margin: 0.25em 0;
 }
 .skill-list-title{
-    background-color: #FFF;
+    background-color: #0091FF;
+    color: #FFF;
     border-radius: 0.15em;
     box-shadow: 0 1px 8px 1.5px #333;
-    padding: 0.3em 0.4em;
+    padding: 0.45em 0.6em;
 }
 .skill-image{
     height: 12em;
@@ -33,6 +34,7 @@
     width: 80%;
     align-items: center;
     justify-content: center;
+    align-content: center;
     order: 1;
     background-color: #FFF;
     box-shadow: 0 2px 15px 8px #222;
@@ -90,7 +92,7 @@
         padding: 1em 0;
     }
     .skill-list{
-        width: 98%;
+        width: 95%;
         order: 0;
     }
     .left-slider{

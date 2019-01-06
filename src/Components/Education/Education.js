@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {db, storage} from '../../firebaseInit';
 import './Education.css';
 import {EducationConsumer} from './EducationContext';
 import Loading from '../Loading/Loading';

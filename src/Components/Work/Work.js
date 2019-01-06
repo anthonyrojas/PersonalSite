@@ -20,7 +20,6 @@ class Work extends Component{
                     return(
                         <div className='Work'>
                             <div className='row'>
-                            {console.log(context.workContent)}
                                 <h2 className='section-header'>Work</h2>
                             </div>
                             <div className='row'>

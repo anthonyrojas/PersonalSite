@@ -4,7 +4,7 @@ const Footer = (props) =>(
     <footer>
         <div className='row'>
             <div className='col-10 col-md-3 flex-center'>
-                <a href='https://github.com/anthonyrojas?tab=repositories' target='_blank' rel='noopener' className='footer-link'>
+                <a href='https://github.com/anthonyrojas?tab=repositories' target='_blank' rel='noopener noreferrer' className='footer-link'>
                     <i className='fab fa-github fa-4x'></i>
                 </a>
             </div>
@@ -14,7 +14,7 @@ const Footer = (props) =>(
                 </a>
             </div>
             <div className='col-10 col-md-3 flex-center'>
-                <a href='https://www.linkedin.com/in/anthony-rojas-09/' target='_blank' rel='noopener' className='footer-link'>
+                <a href='https://www.linkedin.com/in/anthony-rojas-09/' target='_blank' rel='noopener noreferrer' className='footer-link'>
                     <i className='fab fa-linkedin fa-4x'></i>
                 </a>
             </div>
