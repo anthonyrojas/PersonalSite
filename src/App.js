@@ -17,15 +17,6 @@ const ProjectsContainer = lazy(()=>import('./Components/Projects/ProjectsContain
 class App extends Component {
   constructor(props){
     super(props);
-    this.mainRef = React.createRef();
-    this.state={
-      mainTopPosition: 0
-    }
-  }
-  componentDidMount(){
-    this.setState({
-      mainTopPosition: this.mainRef.current.offsetTop,
-    });
   }
   render() {
     return (
@@ -33,8 +24,8 @@ class App extends Component {
         <Header />
         <Router>
             <React.Fragment>
-              <Navbar mainPosition={this.state.mainTopPosition}/>
-              <main ref={this.mainRef}>
+              <Navbar/>
+              <main>
               <React.Suspense fallback={<Loading />}>
                 <Switch>
                   <Route exact path='/'><AboutContainer /></Route>

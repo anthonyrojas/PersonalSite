@@ -14,7 +14,7 @@ class Navbar extends Component{
     }
     clickNavLink(e){
         window.scrollTo({
-            top: this.props.mainPosition - 5,
+            top: 0,
             behavior: 'smooth'
         });
         this.toggleNav(e);
