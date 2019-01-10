@@ -15,9 +15,6 @@ const EducationContainer = lazy(()=>import('./Components/Education/EducationCont
 const WorkContainer = lazy(()=>import('./Components/Work/WorkContainer'));
 const ProjectsContainer = lazy(()=>import('./Components/Projects/ProjectsContainer'));
 class App extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className="App">
