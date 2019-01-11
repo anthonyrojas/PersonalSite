@@ -61,11 +61,24 @@
 .right-slider{
     order: 2;
 }
-.slider-icon:hover{
-    background-color: #0091FF;
-    background: linear-gradient(to right, #0072ff, #00c6ff);
+.right-slider:focus, .left-slider:focus{
+    outline: 0;
+}
+.slider-ripple{
+    background-position: center;
+    transition: background 0.8s;
+}
+.slider-ripple:hover{
+    background: #0072ff radial-gradient(circle, transparent 1%, #0072ff) center/150000%;
+    box-shadow: 0 -1px 15px 1.5px #222;
     color: #FFF;
-    box-shadow: 0 0 12px 4px #222;
+}
+.slider-ripple:active{
+    background-color: #0091FF;
+    color: #FFF;
+    transition: background 0s;
+}
+.slider-icon:hover{
     cursor: pointer;
 }
 .skill-list-item{

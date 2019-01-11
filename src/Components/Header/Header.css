@@ -25,7 +25,7 @@ header{
     align-items: center;
     justify-content: center;
     animation-name: fadeOutHeaderOverlay;
-    animation-duration: 8s;
+    animation-duration: 7s;
 }
 header h1{
     margin: 0;

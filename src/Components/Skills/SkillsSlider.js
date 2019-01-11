@@ -44,8 +44,8 @@ class SkillsSlider extends Component{
                     ))
                 }
                 </ul>
-                <i className='fas fa-chevron-left slider-icon left-slider' onClick={this.previousSlide.bind(this)}></i>                                            
-                <i className='fas fa-chevron-right slider-icon right-slider' onClick={this.nextSlide.bind(this)}></i>                                            
+                <i className='fas fa-chevron-left slider-icon left-slider slider-ripple' onClick={this.previousSlide.bind(this)}></i>                                            
+                <i className='fas fa-chevron-right slider-icon right-slider slider-ripple' onClick={this.nextSlide.bind(this)}></i>                                            
             </div>            
         );
     }
