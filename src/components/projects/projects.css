@@ -30,6 +30,7 @@
     background-color: #111;
 }
 .project-image{
+    max-height: 350px;
     width: 96%;
 }
 .project-description-container{
