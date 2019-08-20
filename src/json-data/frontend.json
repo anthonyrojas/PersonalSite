@@ -1,0 +1,26 @@
+[
+    {
+        "name": "React",
+        "imageUrl": "../images/skills/react.svg"
+    },
+    {
+        "name": "Vue.JS",
+        "imageUrl": "../images/skills/vuejs.svg"
+    },
+    {
+        "name": "Redux",
+        "imageUrl": "../images/skills/redux.svg"
+    },
+    {
+        "name": "jQuery",
+        "imageUrl": "../images/skills/jquery.png"
+    },
+    {
+        "name": "CSS",
+        "imageUrl": "../images/skills/css3.svg"
+    },
+    {
+        "name": "HTML",
+        "imageUrl": "../images/skills/html5.svg"
+    }
+]

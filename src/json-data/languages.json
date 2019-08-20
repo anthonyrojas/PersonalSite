@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Javascript",
+        "imageUrl": "../images/skills/js.svg"
+    },
+    {
+        "name": "Java",
+        "imageUrl": "../images/skills/java.svg"
+    },
+    {
+        "name": "C#",
+        "imageUrl": "../images/skills/csharp.svg"
+    },
+    {
+        "name": "C",
+        "imageUrl": "../images/skills/c.svg"
+    },
+    {
+        "name": "C++",
+        "imageUrl": "../images/skills/cpp.svg"
+    },
+    {
+        "name": "PHP",
+        "imageUrl": "../images/skills/php.svg"
+    },
+    {
+        "name": "Python",
+        "imageUrl": "../images/skills/python.svg"
+    }
+]

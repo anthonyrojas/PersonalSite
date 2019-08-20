@@ -1,0 +1,22 @@
+[
+    {
+        "name": "AWS",
+        "imageUrl": "../images/skills/aws.svg"
+    },
+    {
+        "name": "Azure",
+        "imageUrl": "../images/skills/azure.svg"
+    },
+    {
+        "name": "DigitalOcean",
+        "imageUrl": "../images/skills/digitalocean.svg"
+    },
+    {
+        "name": "Vultr",
+        "imageUrl": "../images/skills/vultr.png"
+    },
+    {
+        "name": "Firebase",
+        "imageUrl": "../images/skills/firebase.svg"
+    }
+]

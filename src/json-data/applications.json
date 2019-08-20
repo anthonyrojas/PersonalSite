@@ -1,0 +1,14 @@
+[
+    {
+        "name": "React Native",
+        "imageUrl": "../images/skills/react.svg"
+    },
+    {
+        "name": "Universal Window Platform",
+        "imageUrl": "../images/skills/uwp.png"
+    },
+    {
+        "name": "Windows Presentation Format",
+        "imageUrl": "../images/skills/dotnet.png"
+    }
+]

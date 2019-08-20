@@ -1,0 +1,22 @@
+[
+    {
+        "name": "MySQL",
+        "imageUrl": "../images/skills/mysql.svg"
+    },
+    {
+        "name": "MS SQL Server",
+        "imageUrl": "../images/skills/mssql.svg"
+    },
+    {
+        "name": "Firestore",
+        "imageUrl": "../images/skills/firebase.svg"
+    },
+    {
+        "name": "Mongo DB",
+        "imageUrl": "../images/skills/mongodb.png"
+    },
+    {
+        "name": "Cosmos DB",
+        "imageUrl": "../images/skills/cosmosdb.png"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Material UI",
+        "imageUrl": "../images/skills/material-ui.svg"
+    },
+    {
+        "name": "Bootstrap",
+        "imageUrl": "../images/skills/bootstrap.png"
+    },
+    {
+        "name": "Materialize",
+        "imageUrl": "../images/skills/materialize.svg"
+    }
+]
