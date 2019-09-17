@@ -1,14 +1,6 @@
 .skills-section{
-    width: 100%;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-}
-.skills-section h2{
-    display: block;
-    width: 100%;
+    padding: 1rem;
+    margin: 2rem 0 2rem 0;
 }
 .skills-list-container{
     border-radius: 0.5rem;
@@ -84,7 +76,7 @@
 .skill-carousel-control-left, .skill-carousel-control-right{
     display: inline-block;
     cursor: pointer;
-    padding: 0.65rem;
+    padding: 0.75rem;
     background: none;
     border: none;
     outline: none;
@@ -112,6 +104,9 @@
 .carousel-circle-active{
     background-color: #FFF;
     animation: fadeIn 0.5s;
+}
+.control-icons{
+    font-size: 1.35rem;
 }
 @media screen and (max-width: 1200px){
     .skills-list-container{

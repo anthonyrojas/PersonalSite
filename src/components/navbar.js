@@ -11,7 +11,7 @@ const Navbar = (props) => (
                 <Link className='nav-link' to='/projects'>Projects</Link>
             </li>
             <li className='nav-list-item'>
-                <Link className='nav-link' to='/'>Education</Link>
+                <Link className='nav-link' to='/education'>Education</Link>
             </li>
             <li className='nav-list-item'>
                 <Link className='nav-link' to='/'>Work</Link>

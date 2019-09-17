@@ -1,16 +1,18 @@
-//import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo";
 import Skills from '../components/skills/Skills';
+import ProfileImg from '../images/profile.png';
 
 <Layout>
 <SEO title="About" />
-<div className='about-me-section'>
+<div className='about-me-section paper-dark'>
 
 # About Me
+
+<div className='row'>
+    <img className='profile-img' src={ProfileImg} alt='profile image' title='Profile' />
+</div>
 
 I am a software developer with a Bachelor's degree in Computer Science from California State University, Long Beach. I specialize in web development. My main focus is on back-end development. I enjoy using a multitude of programming languages and technologies to create secure, scalable REST API's that can be consumed by either web, mobile, or native desktop clients. Javascript (and Node.JS) is my language of choice for web development of any kind due to its ease of use, speed, and ability to customize it to my liking. My skills are not limited to building REST API's, however. I also have knowledge in database development, authentication schemes and implementation, front-end development, mobile application development, desktop application development, and cloud development and deployment. I try to learn more every day and stay productive, be it at work or on my own time. I believe learning, and willingness to learn, should be important aspects of anyone's life, which is why I try to steadily improve my knowledge base and skillset with each day.
 

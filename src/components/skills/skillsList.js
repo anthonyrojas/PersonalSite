@@ -48,10 +48,10 @@ export default class skillsList extends Component {
                 <div className='skills-list-container-footer'>
                     <div className='skills-carousel-controls'>
                         <button onClick={this.onClickScrollLeft.bind(this)} className='skill-carousel-control-left'>
-                            <i className='material-icons'>chevron_left</i>
+                            <i className="fas fa-2x fa-chevron-left"></i>
                         </button>
                         <button onClick={this.onClickScrollRight.bind(this)} className='skill-carousel-control-right'>
-                            <i className='material-icons'>chevron_right</i>
+                            <i className="fas fa-2x fa-chevron-right"></i>
                         </button>
                     </div>
                     <div className='skills-list-indicators'>

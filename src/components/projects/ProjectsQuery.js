@@ -6,7 +6,7 @@ export default ()=>(
         query={
             graphql`
             query allProjectsQuery {
-                allMarkdownRemark {
+                allMarkdownRemark(sort: {fields: frontmatter___order, order: DESC}, filter: {frontmatter: {category: {eq: "projects"}}}) {
                     nodes {
                         id
                         frontmatter {
