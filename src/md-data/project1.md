@@ -1,7 +1,7 @@
 ---
 title: "Music Store"
 date: "2019-09-09"
-featuredImage: "../images/projects/music-store.webp"
+featuredImage: "../images/projects/music-store.png"
 category: "projects"
 order: 0
 ---

@@ -1,7 +1,7 @@
 ---
 title: "DFS"
 date: "2019-09-09"
-featuredImage: "../images/projects/dfs.webp"
+featuredImage: "../images/projects/dfs.png"
 category: "projects"
 order: 1
 ---

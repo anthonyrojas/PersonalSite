@@ -1,6 +1,6 @@
 ---
 title: "Clash Royale Clan v2"
-featuredImage: "../images/projects/normies-cr-2.webp"
+featuredImage: "../images/projects/normies-cr-2.png"
 category: "projects"
 date: "2019-09-09"
 order: 5

@@ -1,7 +1,3 @@
-.projects-section{
-    margin: 2rem 0;
-    padding: 1rem;
-}
 .projects-section h1{
     text-align: center;
 }
@@ -20,17 +16,14 @@
     max-width: 45%;
     margin: 1rem 0.5rem;
     border-radius: 0.25rem;
-    box-shadow: 0 1px 9px -1px rgba(225,225,225, 0.55);
+    background: none;
 }
 .project-header{
     width: 100%;
-    background: linear-gradient(to top, #009AFF,#0072ff) !important;
-    background-color: #0072ff;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
 }
 .project-title{
     text-align: center;
+    margin: 1rem 0;
 }
 .project-image-container{
     display: flex;
@@ -40,16 +33,28 @@
     align-items: center;
     width: 100%;
     max-height: 350px;
-    background-color: #111;
+    /* background-color: #111; */
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    border-radius: 0.25rem;
+    transform: translateY(1rem);
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
 }
 .project-image{
-    width: 96%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.project-data-container{
+    padding-top: 1rem;
+    display: block;
+    width: 92%;
+    background: linear-gradient(to top, #009AFF,#0072ff) !important;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -7px rgba(0,0,0,0.2);
 }
 .project-description-container{
-    background: linear-gradient(to top, #009AFF,#0072ff) !important;
-    background-color: #0072ff;
     width: 100%;
     padding: 0.5rem;
+    padding-top: 0;
     height: 0px;
     overflow: hidden;
     transition: height .75s;
@@ -69,18 +74,6 @@
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
 }
-/* .project-description{
-    overflow: hidden;
-    height: 0px !important;
-}
-.project-description *{
-    height: 0px;
-    overflow: hidden;
-}
-.project-description-expand{
-    height: 100%;
-    text-align: left;
-} */
 .project-btn{
     background-image: linear-gradient(to top, #434343 0%, black 100%);
     padding: 0.6rem 0.5rem;
@@ -89,6 +82,7 @@
     font-size: 1rem;
     color: #FFF;
     border-radius: 0.15rem;
+    z-index: 5;
 }
 .project-btn:active{
     background-image: linear-gradient(to top, #868f96 0%, #596164 100%);
@@ -111,6 +105,7 @@
 }
 @media (hover:hover){
     .project-btn:hover{
+        cursor: pointer;
         background-image: linear-gradient(to top, #535353 0%, #121212 100%);
     }
     .project-btn:active{

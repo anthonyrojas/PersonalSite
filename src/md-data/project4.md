@@ -1,7 +1,7 @@
 ---
 title: "Clash Royale Clan Site"
 date: "2019-09-09"
-featuredImage: "../images/projects/normies-cr.webp"
+featuredImage: "../images/projects/normies-cr.png"
 category: "projects"
 order: 3
 ---

@@ -34,7 +34,6 @@ export default class skillsList extends Component {
         const data = this.props.data;
         return (
             <div className='skills-list-container'>
-                <h3 className='skills-list-title'>{this.props.title}</h3>
                 <div className='skill-list-carousel'>
                 {
                     data.map((skill, index)=>(
@@ -46,6 +45,7 @@ export default class skillsList extends Component {
                 }
                 </div>
                 <div className='skills-list-container-footer'>
+                    <h3 className='skills-list-title'>{this.props.title}</h3>
                     <div className='skills-carousel-controls'>
                         <button onClick={this.onClickScrollLeft.bind(this)} className='skill-carousel-control-left'>
                             <i className="fas fa-2x fa-chevron-left"></i>

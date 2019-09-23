@@ -1,7 +1,7 @@
 ---
 title: "Pride All-Stars"
 date: "2019-09-09"
-featuredImage: "../images/projects/pride-all-stars.webp"
+featuredImage: "../images/projects/pride-all-stars.png"
 category: "projects"
 order: 2
 ---

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Anthony Rojas`,
-    description: `My portfolio of all my projects.`,
+    description: `My personal portfolio.`,
     author: `Anthony Rojas`,
   },
   plugins: [
@@ -35,6 +35,19 @@ module.exports = {
       }
     },
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 750
+            }
+          }
+        ]
+      }
+    },
     'gatsby-plugin-mdx',
     'gatsby-transformer-json',
     {

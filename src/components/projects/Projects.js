@@ -4,7 +4,7 @@ import Project from './Project';
 export default function Projects(props){
     const projects = props.data;
     return(
-        <div className='row projects-row paper-dark'>
+        <div className='row projects-row '>
             {
                 projects.map((project)=>(
                     <Project key={project.id} project={project} />

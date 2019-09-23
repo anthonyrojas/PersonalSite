@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Navbar from './navbar'
 import "./layout.css"
+import Helmet from 'react-helmet';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +20,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <script src="https://kit.fontawesome.com/a08ac07960.js" crossorigin="anonymous"></script>
+      </Helmet>
       <Navbar />
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className='row'>

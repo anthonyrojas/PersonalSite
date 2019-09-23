@@ -1,6 +1,6 @@
 ---
 title: "Secure Chat App"
-featuredImage: "../images/projects/secure-chat-app.webp"
+featuredImage: "../images/projects/secure-chat-app.png"
 date: "2019-09-09"
 category: "projects"
 order: 4
