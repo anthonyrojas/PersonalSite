@@ -1,10 +1,10 @@
 import {Link} from 'gatsby';
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import './layout.css'
 export default function Navbar(props){
     const navListRef = useRef(false);
     const [navHeight, setNavHeight] = useState('0px');
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(0);
     const [menuActive,setMenuActive] = useState(false);
     const onButtonClick = () => {
         setMenuActive(!menuActive);
@@ -17,7 +17,10 @@ export default function Navbar(props){
     const updateWindowWidth = () => {
         setWindowWidth(window.innerWidth);
     }
-    window.addEventListener('resize', updateWindowWidth);
+    useEffect(()=>{
+        window.addEventListener('resize', updateWindowWidth);
+        updateWindowWidth();
+    }, [])
     return (
         <nav className='navbar'>
             <div className='navbar-title-container'>
