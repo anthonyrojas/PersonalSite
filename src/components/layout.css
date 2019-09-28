@@ -454,9 +454,26 @@ pre tt:after {
   background-color: #0072ff;
   flex-direction: row;
   position: fixed;
+  flex-wrap: wrap;
   top: 0;
   width: 100%;
   z-index: 10;
+}
+.navbar-title-container{
+  display: none;
+  padding: 1rem 0;
+  margin: 0 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 0 0 50%;
+  max-width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+.navbar-title{
+  font-weight: 500;
+  font-size: 1.25rem;
 }
 .nav-list{
   list-style: none;
@@ -474,8 +491,11 @@ pre tt:after {
   padding: 1rem;
 }
 .nav-link:hover{
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.25);
   color: #FFF;
+}
+.navbar-controls-container{
+  display: none;
 }
 .container{
   width: 70%;
@@ -502,6 +522,9 @@ pre tt:after {
   margin: 2rem 0;
   padding: 1rem;
 }
+.md-section h1{
+  text-align: center;
+}
 .about-me-section h1{
   text-align: center;
 }
@@ -521,8 +544,8 @@ footer{
   transition: all .2s ease-in-out;
 }
 .footer-link:active{
-  color: #00a1fe;
-  transform: scale(1.35);
+  color: #BAE8FC;
+  transform: scale(1.25);
 }
 @media only screen and (max-width: 796px){
   .container{
@@ -546,22 +569,80 @@ footer{
     width: 60%;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   html {
     font-size: 100%;
   }
   .profile-img{
     width: 75%;
   }
+  .nav-list{
+    overflow: hidden;
+  }
+  .navbar{
+    flex-direction: row;
+  }
+  .nav-list-item{
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-title-container{
+    display: flex;
+  }
+  .navbar-controls-container{
+    padding: 1rem 0;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 40%;
+    flex: 0 0 40%;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+  .navbar-menu-btn{
+    outline: none;
+    border: none;
+    background: none;
+  }
+  .navbar-menu-btn:hover{
+    cursor: pointer;
+  }
+  .nav-btn-inactive:nth-child(1){
+    display: block;
+  }
+  .nav-btn-inactive:nth-child(2){
+    display: block;
+  }
+  .nav-btn-inactive:nth-child(3){
+    display: block;
+  }
+  .nav-btn-active:nth-child(1){
+    transform: rotate(45deg) translate(0.25rem, 0.35rem);
+  }
+  .nav-btn-active:nth-child(2){
+    opacity: 0;
+  }
+  .nav-btn-active:nth-child(3){
+    transform: rotate(-45deg) translate(0.4rem, -0.45rem);
+  }
+  .menu-line{
+    width: 1.75rem;
+    height: 0.2rem;
+    margin: 0 0 5px 0;
+    background-color: #FFF;
+    transition: all 0.35s ease-out;
+  }
 }
 @media (hover:hover){
   .footer-link:hover{
-    color: #04befe;
-    transform: scale(1.35);
+    color: #D6EEF7;
+    transform: scale(1.25);
   }
   .footer-link:active{
-    color: #00a1fe;
-    transform: scale(1.35);
+    color: #BAE8FC;
+    transform: scale(1.25);
   }
 }
 @keyframes fadeIn{
