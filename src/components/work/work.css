@@ -68,4 +68,7 @@
     .job-data>ul{
         padding: 0;
     }
+    .job-container{
+        width: 100%;
+    }
 }

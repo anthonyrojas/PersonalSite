@@ -97,8 +97,8 @@
 }
 @media screen and (max-width: 576px){
     .project-container{
-        flex: 1 0 90%;
-        max-width: 90%;
+        flex: 1 0 94%;
+        max-width: 94%;
         margin-left: 0;
         margin-right: 0;
     }

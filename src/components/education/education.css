@@ -60,10 +60,13 @@
         max-width: 50%;
     }
     .school-data-container{
-        flex: 0 0 90%;
-        max-width: 90%;
+        flex: 0 0 94%;
+        max-width: 94%;
     }
     .school-data>ul{
         padding: 0;
+    }
+    .school-container{
+        width: 100%;
     }
 }
